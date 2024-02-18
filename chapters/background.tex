@@ -2,6 +2,32 @@
 \chapter{Fundamentação}\label{cap:fundamentacao}
 % ----------------------------------------------------------
 
+% ----------------------------------------------------------
+\section{O Padrão CubeSat}\label{sec:cubesats}
+% ----------------------------------------------------------
+
+Os CubeSats são nanosatélites padronizados, com critérios de tamanho, forma e peso específicos.
+Satélites neste padrão são compostos por uma ou mais unidades em formato cúbico, com aresta de \(10cm\) e massa de até \(2kg\) \cite{cds}.
+Cada unidade é chamada "1U", ou seja, um CubeSat formado por três unidades é categorizado com um CubeSat 3U.
+
+Este padrão surgiu, em 1999, de um projeto colaborativo entre os professores Bob Twiggs (Stanford University) e Jordi Puig-Suari (California Polytechnic State University), chamado CubeSat Project, que tinha como objetivo promover o acesso ao ambiente espacial através da redução de custos e de tempo de desenvolvimento, possibilitando lançamentos mais frequentes \cite{cds}.
+
+Pode-se identificar um conjunto de subsistemas fundamentais presentes no design de boa parte dos 
+CubeSats. Os trabalhos de \red{x e Y} identificam os seguintes principais subsistemas:
+\begin{itemize}
+    \item Gerenciamento de energia;
+    \item Gerenciamento de dados (computador de bordo);
+    \item Comunicação;
+    \item Dterminação e controle de atitude e orbita;
+    \item Estrutura mecânica;
+    \item Controle termico;
+    \item Propulção.
+\end{itemize}
+
+Cada subsistema é geralmente implementado em um módulo dedicado, chamado módulo de serviço, e o conjunto destes módulos forma a plataforma de serviço do satélite, responsavel por todas as funções e operações fundamentais de um Cubesat.
+De fato,  no livro de \red{chantal}, são apresentados tais módulos e discutidos os principais aspectos a serem considerados para o design e implementação de cada subsistema.
+
+Além da plataforma de serviço, os CubeSats também são equipados com cargar úteis, ou payloads, que são os módulos responsaveis por realizar os objetivos específicos de cada missão.
 
 % ----------------------------------------------------------
 \section{Normas e Padrões de Testes}\label{sec:normas-ecss}
@@ -59,14 +85,14 @@ Com isso, apesar deste trabalho ser focado em testes, alguns conceitos relaciona
 
 Similarmente à filosofia de testes apresentada pelo \gls{CDS}, em \textcite{ecss-e-st-10-03} tem-se os conceitos de \textit{qualification testing}, \textit{acceptance testing} e \textit{proto-flight testing}, que determinam os objetivos do plano de testes.
 
-\subsubsection*{\textit{Verification Levels}}
+\subsubsection{\textit{Verification Levels}}
 
 Os níveis de verificação estão relacionados à decomposição do produto final, neste caso um CubeSat. Estes níveis podem varias de acordo com a complexidade do projeto.
 Os níveis de decomposição típicos são mostrados no anexo B.1 de \textcite{ecss-s-st-00-01}.
 
 O processo de verificação é executado em cada um dos níveis definidos para um projeto ou missão.
 
-\subsubsection*{\textit{Verification Stages}}
+\subsubsection{\textit{Verification Stages}}
 
 O processo de verificação é feito em estágios, com objetivos específicos. Os principais estágios apresentados em \textcite{ecss-e-st-10-02} são \textit{qualification}, \textit{acceptance}\red{, \textit{pre-launch}, \textit{in-orbit}, e \textit{post-landing}}.
 \red{Falar de todos os estágios aqui ou já selecionar apenas os aplicáveis à CubeSats  e módulos EPS?}
@@ -76,7 +102,7 @@ O estágio de \textit{qualification} visa garantir que o design proposto para a 
 O estágio de \textit{acceptance} visa demostrar que o modelo final \red{modelo físico de vôo} está em conformidade com o design qualificado préviamente
 
 
-\subsubsection*{\textit{Model Philosophy}}
+\subsubsection{\textit{Model Philosophy}}
 
 O conceito de \textit{model philosophy} está relacionado ao tipo e quantidade de modelos físicos utilizados durante o desenvolmento, verificação e testes.
 
@@ -84,17 +110,17 @@ Em \cite{ecss-e-hb-10-02}, diversos tipos de modelos são apresentados e descrit
 \red{Descrever os modelos?}
 
 
-\subsubsection*{\textit{Qualification Testing}}
+\subsubsection{\textit{Qualification Testing}}
 
 Testes de qualificação (chamado \textit{qualification testing} na ECSS-E-ST-10-03) tem o objetivo de verificar que o design do objeto sobre teste é capaz de satifazer todos os seu requisitos. Estes testes são conduzidos em modelos de qualificação dedicados e com parâmetros de teste (intesidade, duração) específicos.
 
 
-\subsubsection*{\textit{Acceptance Testing}}
+\subsubsection{\textit{Acceptance Testing}}
 
 Testes de aceitação (chamado \textit{qualification testing} na ECSS-E-ST-10-03) tem o objetivo de verificar que o objeto sobre teste está em conformidade com o design que foi qualificado préviamente e se encontra livre de defeitos de fabricação. Estes testes são conduzidos em todos os modelos de vôo e com parâmetros de teste (intesidade, duração) específicos para \textit{acceptance testing}.
 
 
-\subsubsection*{\textit{Proto-Flight Testing}}
+\subsubsection{\textit{Proto-Flight Testing}}
 
 Testes de proto-flight (chamado \textit{proto-flight testing} na ECSS-E-ST-10-03) podem ser executados no primeiro modelo de vôo e combinam os objetivos dos testes de qualificação e aceitação. Os parâmetros de teste (intesidade, duração) utilizam as intensidades definidas para qualificação com as durações definidas para aceitação.
 
@@ -320,7 +346,7 @@ Evidentemente, um determinado design de \gls{EPS} pode não conter todas estes a
 
 Além da arquitetura dos módulos, alguns dos trabalhos analisados apresentaram também os testes realizados em seus \gls{EPS}s, que serão apresentados a seguir.
 
-\subsection*{Aalto-2}
+\subsection{Aalto-2}
 
 No trabalho de \textcite{aalto-eps}, é descrito o planejamnto de testes para o EPS do satélite Aalto-2, assim como são relatados os resultados de testes executados em um modelo protótipo do mesmo.
 
@@ -347,7 +373,7 @@ Para proteção contra over-current é utilizado o componente MAX890L. Sua opera
 O teste de burn-in consistiu em aplicar uma alta demanda de potência ao EPS por um longo período de tempo.
 Foram aplicadas cargas de 4.5W e 2.5W aos conversores de 5V e 3.3V, respectivamente, por um período de 7 dias. Após o teste, as características da placa foram medidas e comparadas com resultados anteriores.
 
-\subsection*{ESTCube-1}
+\subsection{ESTCube-1}
 
 No artigo de \textcite{estcube-eps} são relatados os testes realizados para qualificação do \gls{EPS} do satélite ESTCube-1. A filosofia de testes adotada foi de \textit{proto-flight testing}, ou seja, o mesmo módulo utilizado nos testes de qualificação foi utilizado como modelo de vôo.
 Um modelo de engenharia testes funcionais e de desenvolvimento, porém estes não foram descritos detalhadamente no artigo.
@@ -365,7 +391,7 @@ Além disso, foram realiazdos testes de estresse dos principais componentes do m
 Foram medidas também a eficiência dos conversores utilizados, para diferentes tensões de entrada e diferentes cargas.
 
 
-\subsection*{MIST}
+\subsection{MIST}
 
 O trabalho de \textcite{mist-eps} descreve em detalhe os procedimentos de testes funcionais realizados no \gls{EPS} do satélite MIST.
 Neste CubeSat, foram empregados módulos comerciais para toda a plataforma de serviço, inclusive para o \gls{EPS}, utilizando o modelo NanoPower P31u \cite{p31u-datasheet} em conjunto com a placa de baterias BP4 \cite{bp4-datasheet}, ambos fabricados pela GomSpace.
@@ -406,7 +432,7 @@ A seguir estão listados, resumidamente, os principais testes executados no \gls
 
 
 
-\subsection*{EPS 2.0}
+\subsection{EPS 2.0}
 
 Encontra-se na documentação do \gls{EPS2} \cite{eps2-doc} um capítulo descrevendo os procedimentos de teste a serem executados no módulo.
 Tem-se também documentados relatórios de testes feitos em modelos de engenharia deste \gls{EPS}.
@@ -416,9 +442,10 @@ Para cada módulo, testes mais específicos poderão ser acrescentados à matriz
 Os tests foram organizados em blocos, envolvendo uma série de inspeções, testes elétricos, funcionais.
 
 \begin{table}[htp]
+    \ABNTEXfontereduzida
     \centering
     \caption{Matriz de testes do EPS 2.0.}
-    \begin{tabular}{l|p{105mm}|p{5mm}}
+    \begin{tabular}{l|p{90mm}|p{5mm}}
         \toprule[1.5pt]
         Test type     & Subtests & ID \\
         \midrule

@@ -2,9 +2,73 @@
 \chapter{Desenvolvimento}
 % ----------------------------------------------------------
 
-\red{Descrever as considerações e raciocínios para a elaboração do plano baseado no que foi apresentado na fundamentação}
 
-\red{Descrever a estrutura e organização do plano de testes.}
+Conforme \textcite{ecss-e-st-10-03}, o plano de testes é desenvolvido de acordo com o plano de verificação, que define quais dos requisitos relacionados ao produto serão testados.
+A partir do plano de testes, documentos complementares são gerados, relacionados à especificação dos testes, procedimentos de teste e por fim relarórios de teste.
+Nas normas, o termo produto se refere ao item ao qual o plano de testes se aplica.
+
+Além dos conceitos apresentados na \autoref{sec:normas-ecss}, estas normas contem uma série de definições e requisistos relacionados aos testes, além de linhas de base de testes a serem adotadas.
+Para sua utilização é feito um processo de adequação, também chamado de tailoring, para cada produto, no caso deste trabalho, o \gls{EPS}.
+
+Este processo de adequação inicia-se a partir de definições iniciais acerca do tipo de produto a qual o plano se aplicará e do tipo de modelos a serem utilizados, para então adaptarem-se as linha de base de testes e elaborar o plano de testes.
+
+\red{Comentar sobre requisitos relacionados à condições de teste, tolerancias, incertezas e etc. No caso, serão referenciadas diretamente as normas no documento como recomendações, visto que aplica-los à risca em uma missão universitária seria demasiado demorado e custoso (basicamente impossivel)}
+
+O plano de testes base proposto neste trabalho consistirá de um documento contendo um conjunto de orientações e direcionamentos, detalhando os principais aspectos e considerações relevantes acerca da adaptação destas normas para módulos \gls{EPS} de forma que, a partir dele, possa-se elaborar planos de teste para diferentes topologias e arquiteturas de \gls{EPS}.
+
+O documento proposto abordará os seguintes tópicos:
+\begin{itemize}
+    \item objetivo do plano de testes;
+    \item blocos de testes;
+    \item matriz de testes base;
+    \item documentação.
+\end{itemize}
+
+
+
+
+
+
+
+% falar direto das definições relacionadas aos testes e linkar com verificação conforme mostrado na fundamentação, não explicar verificação primeiro para eventualmente chegar nos testes
+
+% blocos de testes
+% definição da matriz de testes
+
+% intensidade e duração conforme objetivo, vide tabelas das normas
+
+
+% The tailoring is applied in three steps:
+% • First step: Tailoring is based upon the type of product and selected model philosophy. It consists of the selection of the relevant clauses as presented in Figure D-2.
+
+% NOTE Should your model philosophy combine several models (e.g. QM+FM, or PFM+FM) the relevant clauses for both models need to be selected and merged when performing the second step.
+
+% • Second step: The second tailoring consists in the consolidating Table 5-1, Table 5-3, Table 5-5, Table 6-1, Table 6-3 and Table 6-5 as they were selected in the First step.
+
+% • Third step: The clause and Table called up on Table(s) consolidated at the Second step needs to be added, appropriately merged and tailored. At the end of the three steps, a new document is build which is the tailored Testing standard for a project application.
+
+% The supplier responds to this document by a compliance matrix.
+
+% When performing the three above steps the following points needs to be covered:
+
+% • review the terms in clause 3 to ensure their proper use when performing the tailoring steps;
+
+% • agree, as needed, on the nature of the item (space segment equipment versus space segment element) as per requirement 4.1b, and for equipment, agree the type of, or combination of types (as per Table 5-1 or Table 5-3 or Table 5-5);
+
+% • agree on Test block definition as per requirement 4.3.2.1b in particular for equipment;
+
+% • establish test matrix and test flow based on Figure 5-1 and Table 5-1 or Table 5-3 or Table 5-5 for equipment and Table 6-1, Table 6-3or Table 6-5for space segment element;
+
+% • tailor the corresponding test level and duration based on corresponding Table 5-1 and Table 5-2 or Table 5-4 or Table 5-6 for equipment and Table 6-2, Table 6-4or Table 6-6for space segment element;
+
+% • take the requirements of clauses 5.5 or 6.5 in accordance with the test table(s) (see column “Reference clause”) and tailor them;
+
+% NOTE When several models are considered reference from various tables need to be considered taking into account the tailoring performed for each model.
+
+% • include clause 4.6 in case of re-testing;
+
+% • include clause 7 in case of PFM or FM stand-alone space segment element.
+
 
 \red{
 Tópicos importantes:
@@ -32,44 +96,150 @@ Tópicos importantes:
 \end{itemize}
 }
 
+% ----------------------------------------------------------
+\section{Considerações Iniciais}
+% ----------------------------------------------------------
 
 De acordo com \textcite{ecss-e-st-10-02}, o processo de verificação é dividido em níveis de decomposição do sistema (\textit{verification levels}). Para cada nível, a verificação é feita multiplos estagíos (\textit{verification stages}), com objetivos específicos.
-\red{Acresentar um ou dois parágrafos sobre verificação na \autoref{sec:normas-ecss}, importante ressaltar os estágios aplicaveisa à uma missão de CubeSat}
+Testes se enquadram como um dos métodos utilizados dentro deste processo, inclusive sendo considerado o método que traz maior confiabilidade \cite{ecss-e-st-10-02}.
 
-Dentro deste processo, testes se enquadram como um dos métodos utilizados para verificação de requisitos, inclusive sendo considerado o método que traz maior confiabilidade.
-Um plano de testes deve ser preparado para cada nível e estágio do processo de verificação.
+Desta forma, um plano de testes deve considerar o nível e estágio do processo de verificação no qual ele será executado.
+Além disso, devem ser definidos os tipos de modelos físicos \textit{model philosophy} a serem utilizados nos testes.
+O estágio de verificação, bem como o tipo de modelo adotado, definirão o objetivo principal do plano de testes elaborado.
 
-Para a verificação por meio de testes, devem ser definidos os tipos de modelos que serão utilizados (\textit{model philosophy}).
+A partir destas considerações, uma análise deve ser feita de modo que estes conceitos possam ser adaptados e aplicados a um módulo \gls{EPS} para CubeSats.
 
-Com isso, para a elaboração de um plano de testes, os seguintes aspectos iniciais, considerando um módulo \gls{EPS}, precisam ser definidos:
+
+% ----------------------------------------------------------
+\subsection{Nível de Verificação}
+% ----------------------------------------------------------
+
+
+O nível de verificação (\textit{verification level}) está relacionado com a decomposição do sistema em diferentes níveis nos quais o processo de verificação é executado.
+Na tabela do apendice b.1 de ecss-s-st-00-01 mostra as divisoes típicas, com exemplos.
+
+Em ecss-e-st-10-03, tratam-se dos testes para os níveis de \textit{space segment element} e \textit{space segment equipment}. O nível de \textit{space segment subsystem}, intermediário à estes, não é coberto nesta norma, de fato, é mencionado que para este nível, normalmete executam-se apenas testes funcionais.
+
+Num primeiro momento, devido às nomenclaturas utilizadas e aos exemplos da tabela menciona, parece intuitivo atribuir os subsistemas de um CubeSat, e portanto o \gls{EPS}, ao nível de \textit{space segment subsystem}, porém uma análise mais minuciosa é necessária.
+
+Primeiramente, visto que a plataforma de serviço é o pricipal foco de desenvolvimento do SpaceLab, é de grande interesse que sejam aplicados testes mais completos aos seus módulos, além de apenas testes funcionais básicos.
+Alem disso, analisando as definições presentes nas próprias normas da \gls{ECSS}, pode-se fazer argumento para a aplicação dos testes voltados para \textit{space segment element} aos módulos de serviço de CubeSat, mais específicamente, neste trabalho, ao\gls{EPS}.
+
+Como visto na \autoref{sec:cubesats}, os módulos de serviço são responsaveis pelas funções fundamentais do nano satélite, e estão diretamente relacionados com o cumprimento de seus objetivos.
+Observando a defnição para o termo \textit{element}, nota-se que este está relacionado justamente com o cumprimento de um subconjunto dos objetivos do satélite.
+
+\begin{citacao}
+    element: combination of integrate equipment, components and parts. An element fulfils a major, self-contained, subset of a segment's objectives. \cite[p. 9]{ecss-s-st-00-01}.
+\end{citacao}.
+
+Além disso, nas próprias normas o termo \textit{service module} (módulo de serviço) é mencionado com \textit{element}. De fato, é mencionado tanto em \textcite{ecss-s-st-00-01} quanto em \textcite{ecss-e-st-10-03} que um elemento pode ser dividido em dois um mais elementos.
+
+\begin{citacao}
+    A space segment element cam be composed of several space segment elements, e.g. a spacecraft is composed of instruments, a payload module and a service module. \cite[p. 10]{ecss-s-st-00-01}
+\end{citacao}.
+
+Outro ponto importante, esta divisão proposta nas normas está no contexto de um satélite de médio ou grande porte, com sistemas de complexidade muito maiores que um CubeSat, portanto, uma decomposição mais granulada dos sistemas é adequada neste aspecto.
+Mesmo neste cenário, em \textcite{ecss-e-hb-10-02}, é mencionado a possibilidade de não se utilizar o nível de subsistema como forma de redução de custos.
+
+Com isto, neste trabalho serão consideradas as recomendações da norma ECSS-E-ST-10-03 \cite{ecss-e-st-10-03} relacionadas à \textit{space segment element}.
+
+% \red{
+%     Referencias para aplicar "element" ao EPS:
+%     \begin{itemize}
+%         \item ECSS-E-ST-10-03 Section 6.1a menciona dividir os testes de um "elemet" em service module tests e payload module tests;
+%         \item Tabela do apendice B.1 de ECSS-S-ST-00-01 mostra module como "element" porém também mostra "power" como "subsystem";
+%         \item Definições de "component", "equipment", "subsystem" e "element" em ECSS-S-ST-00-01 Section 2.2;
+%         \item ECSS-S-ST-00-01 Section 2.2.4 menciona service module como "element";
+%         \item ECSS-E-HB-10-02 Section 5.2.1.3.2 menciona descartar o nível de subsystem como redução de custos;
+%     \end{itemize}
+% Equipment executa uma função específica, subsystem executa um conjunto de funções, element satisfaz um subset dos objetivos de um segment
+% }
+
+% \red{Apresentar os demais níveis de decomposição? Talvez adicionar um parágrafo relacionado na \autoref{sec:normas-ecss}.}
+
+% ----------------------------------------------------------
+\subsection{Obejtivos do Plano de Testes}
+% ----------------------------------------------------------
+
+% Dentre os estágios de verificação apresentados na \autoref{sec:normas-ecss}, considerou-se \textit{qualification} e \textit{acceptance} como aplicáveis a nível de módulo, no contexto de um CubeSat.
+% Estes estágios tem como finalidade qualificar o projeto do módulo e garantir seu funcionamento adequado e são fatores determinantes no objetivo do plano de testes.
+
+% Após a execução destas estapas, o módulo estará apto a ser integrado ao restante do satélite, que passará por seu proprio processo de verificação a partir de então.
+
+
+Considerando o estágio de verificação e tipo de modelo adotado, o plano de testes é definido com um dos três objetivos pricipais: \textit{qualification testing}, \textit{acceptance testing}, \textit{proto-flight testing}.
+A descrição e finalidade de cada objetivo foi apresentada na \autoref{sec:normas-ecss}.
+
+A principal consequencia de um determinado objetivo está na seleção dos testes a serem executados a partir das matrizes de teste base, e principalmente na intensidade e duração dos testes.
+
+De fato, no documento ECSS-E-ST-10-03 \cite{ecss-e-st-10-03}, são apresentadas matrizes de teste base para cada objetivo de teste, sendo que a diferença entre cada uma está na definição de quais testes são considerados como requeridos ou opcionais.
+Em relação à intensidade e duração dos testes, são apresentadas tabelas com os dados específicos para cada objetivo.
+
+Em relação às intesidades e durações, serão referenciadas estas tabelas diretamente no plano de testes base quando necessário.
+
+
+
+
+
+
+% ----------------------------------------------------------
+\section{Linha de Base de Testes}
+% ----------------------------------------------------------
+
+As matrizes de testes base apresentadas em \textcite{ecss-e-st-10-03}, assim como o restante da norma, foram elaboradas de forma bastante abrangente e direcionadas à satélites de grande porte.
+Sendo assim, considerando a simplicidade de projeto de um CubeSat e o contexto de uma missão universitária, uma versão bastante simplificada destas matrizes será adotada.
+
+De fato, será porposta uma única matriz para os três diferentes objetivos, porém esta será elaborada de forma a abranger diferentes topologias e arquiteturas.
+Ainda, visto que o plano de testes base é voltado diretamente para módulos \gls{EPS}, é possivel propor testes mais específicos, especialmente no caso de testes funcionais e de missão, proporcionando um maior direcionamento em relação as matrizes base.
+
+% Considerações sobre testes em missões anteriores
+
+Com isso, a partir das matrizes de testes base apresentadas na norma ECSS-E-ST-10-03 \cite{ecss-e-st-10-03}, consideraram-se os seguintes testes:
+
 \begin{itemize}
-    \item \textit{Verification level};
-    \item \textit{Verification stage};
-    \item \textit{Model philosophy}.
+    \item Funcionais;
+    \item Performance;
+    \item Missão;
+    \item Propriedades físicas;
+    \item Vibração;
+    \item Termo vácuo.
+    \item \red{EMC?}
 \end{itemize}
 
-Em relação ao nível de decomposição do sistema, no documento ECSS-E-ST-10-03, são abordados os requisitos de teste para os níveis de \textit{space segment element} e \textit{space segment equipment}.
-Observando a tabela mostrada no Apêndice B.1 de \textcite{ecss-s-st-00-01}, bem como os termos e definições apresentados na seção 2.2 do mesmo documento, no contexto de um CubeSat, considerou-se o \gls{EPS} como um \textit{space segment element}.
 
-\red{Space segment subsystem, de acordo com as normas, passam apenas por testes funcionais, porém, há argumentos ára se aplicar os testes de space segment element ao EPS. Apesar de, na clssificação da tabela, o EPS se encaixar em subsistema, em um CubeSat, cada subsistema tem uma relevância muito maior. Devido a simplicidade de projeto, decomposição de um CubeSat tem menos níveis, e neste contexto, pode-se considerar que um subsistema teria a mesma relevância atribuída aos elements.
-Outro ponto é que no spacelab, o desenvolvimento da plataforma de serviço é o principal foco, há um grande interesse em realizar este tipo de testes nos módulos individualmente, suprindo ess gap que existe na ECSS.
-}
-
-\red{
-    Referencias para aplicar "element" ao EPS:
-    \begin{itemize}
-        \item ECSS-E-ST-10-03 Section 6.1a menciona dividir os testes de um "elemet" em service module tests e payload module tests;
-        \item Tabela do apendice B.1 de ECSS-S-ST-00-01 mostra module como "element" porém também mostra "power" como "subsystem";
-        \item Definições de "component", "equipment", "subsystem" e "element" em ECSS-S-ST-00-01 Section 2.2;
-        \item ECSS-S-ST-00-01 Section 2.2.4 menciona service module como "element";
-        \item ECSS-E-HB-10-02 Section 5.2.1.3.2 menciona descartar o nível de subsystem como redução de custos;
-    \end{itemize}
-Equipment executa uma função específica, subsystem executa um conjunto de funções, element satisfaz um subset dos objetivos de um segment
-}
-
-\red{Apresentar os demais níveis de decomposição? Talvez adicionar um parágrafo relacionado na \autoref{sec:normas-ecss}.}
-
-Os estágios de verificação estão diretamente relacionados aos objetivos do plano de testes, sendo os princpais estágios: \textit{qualification}, \textit{acceptance}, \textit{pre-launch}, \textit{in-orbit} e \textit{post-landing}.
+Considerações a respeito de cada item
 
 
-% Considerando que CubeSats normalmente não são recuperados após o fim da missão, o estágio de \textit{post-landing} não se aplica.
+% ----------------------------------------------------------
+\section{Testes Funcionais e de Performance}
+% ----------------------------------------------------------
+
+Incluir testes de missão aqui?
+
+Selecionar testes funcionais consideranto as diferentes topologias e arquiteturas apresentadas
+
+
+% ----------------------------------------------------------
+\section{Matriz de Testes Base}
+% ----------------------------------------------------------
+
+Blocos de teste
+
+Matriz proposta
+
+Considerações a cerca da adaptação da matriz
+
+% ----------------------------------------------------------
+\section{Requisitos Adicionais}
+% ----------------------------------------------------------
+
+condições de teste, tolerância, incerteazs
+
+Equipamentos utilizados e local de testes
+
+
+% ----------------------------------------------------------
+\section{Documentação}
+% ----------------------------------------------------------
+
+Apresentar estrutura do documento de plano de testes, test specifications, procedures e report

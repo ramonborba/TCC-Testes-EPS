@@ -2,9 +2,9 @@
 \chapter{Introdução}\label{cap:intro}
 % ----------------------------------------------------------
 
-Desde a criação do padrão CubeSat em 1999, nano satélites tem sido utilizados em cada vez mais aplicações. Tendo se popularizado inicialmente no meio acadêmico, possibilitando à univesidades o desenvolvimento de missões espaciais de baixo custo, atualmente estes satélites são utilizados para diversas aplicações, como observado em \textcite{modern-small-sats-economics}.
+Desde a criação do padrão CubeSat em 1999, nano satélites tem sido utilizados em cada vez mais aplicações. Popularizado inicialmente no meio acadêmico, possibilitando à univesidades o desenvolvimento de missões espaciais de baixo custo, atualmente estes satélites são utilizados para diversas aplicações, como observado em \textcite{modern-small-sats-economics}.
 
-Inicialmente os CubeSats, que seguem as especificações definidas no documento \gls{CDS} \cite{cds}, serviam um propósito acadêmico, com aplicações de demonstarção de tecnologia, experimentos científicos.
+Inicialmente os CubeSats, que seguem as especificações definidas no documento \gls{CDS} \cite{cds}, serviam um propósito didático, com aplicações de demonstarção de tecnologia, experimentos científicos.
 Porém, recentemente, aplicações comerciais de nanosatélites e CubeSats tem ganhado espaço, tanto que em 2014 o numero de lançamentos de nanosatélites com propósito comercial ultrapassou os de propósito acadêmico \cite{modern-small-sats-economics}.
 
 Com o advendo de conceitos como “New Space” e a percepção de sua utilidade comercial, os CubeSats estão entrando no radar de grandes empresas \cite{modern-small-sats-economics}, inclusive sendo utilizados em missões espaciais de grandes instituições como a NASA no programa Artemis, que utilizará de CubeSats em sua missão com o objetivo de explorar a lua \cite{artemis-plan}.
@@ -29,17 +29,16 @@ Porém, é inaceitavel para aplicações comerciais \cite{overview-nanosat-test}
 
 Esta taxa de falha, no entando, vem se reduzindo desde então, com com uma taxa de apenas 10\% de falhas em lançamentos em 2018 \cite{aiv-istsat-1}.
 O aumento no número de aplicações comerciais, desenvolvidas por equipes mais experientes e com mais recursos, é um dos fatores que tem contribuído para essa mudança.
-OUtro fator importante, comom relatado em \textcite{aiv-istsat-1}, missões acadêmicas tem dado maior atenção aos processos de \gls{AIV}.
+Outro fator importante, como relatado em \textcite{aiv-istsat-1}, missões acadêmicas tem dado maior atenção aos processos de \gls{AIV}.
 
-Nota-se também que, em missões de CubeSats mais recentes, foram adotados procedimentos e padrões mais rigorosos, não só em relação à testes, mas em todo o processo de engenharia de sistemas e gerenciamento da missão como um todo.
+Nota-se também que, em missões de CubeSats mais recentes, foram adotados procedimentos e padrões mais rigorosos, não só em relação à testes, mas em todo o processo de engenharia de sistemas e gerenciamento da missão.
 Trabalhos como \textcite{floripasat-1} e \textcite{tailoring-ecss-nanosat}, por exemplo, tomaram como referência os padrões determinados pela \gls{ECSS}, utilizados pela \gls{ESA} e diversas outras agências espaciais da europa.
-\red{Incluir GOLDS/Catarina}?
 
 % ----------------------------------------------------------
 \section{Projetos do SpaceLab}\label{sec:intro-spacelab}
 % ----------------------------------------------------------
 
-O FloripaSat-1, descrito em \textcite{floripasat-1}, foi o primeiro CubeSat desenvolvido e lançado pelo SpaceLab, uma missão de demonstração tecnológica de sua plataforma de serviço multi-missão, totalmente desenvolvida por estudantes da \gls{UFSC}.
+O FloripaSat-1, descrito em \textcite{floripasat-1}, foi o primeiro CubeSat desenvolvido e lançado pelo SpaceLab UFSC - Laboratório de Pesquisa em Sistemas Espaciais, com uma missão de demonstração tecnológica de sua plataforma de serviço multi-missão totalmente desenvolvida por estudantes da \gls{UFSC}.
 
 A plataforma de serviço FloripaSat consiste de três módulos principais, \gls{OBDH}, responsavel pelo controle e gerenciamento de dados, \gls{TTC}, responsavel pela comunicação com as estações terrestres e recepção de telecomandos, e \gls{EPS}, responsavel pela coleta, armazenamento e distribuição de energia.
 
@@ -47,7 +46,7 @@ Após o lançamento do FloripaSat-1, o SpaceLab continuou desenvolvendo e aprior
 
 O \gls{EPS2} é a segunda geração de módulo \gls{EPS} desenvolvido para a plataforma multi-missão do laboratório, será utilizado nas missões GOLDS-UFSC e Constelação Catarina e encontra-se nos estágios finais de desenvolvimento. Este \gls{EPS} é uma evolução direta do módulo utilizado no FloripaSat-1, seguindo a mesma arquitetura, porém, aplicando as lições aprendidas com o primeiro lançamento.
 
-Visto que o \gls{EPS} é o principal causador de falhas em CubeSats, iniciou-se também no SpaceLab a concepção do \gls{REEPS}, com o objetivo de desenvolver um módulo de \gls{EPS} de alta confiabilidade e robustês, tanto em termos de resistência à radiação quanto resistência a falhas.
+Visto que o \gls{EPS} é o principal causador de falhas em CubeSats, iniciou-se também no laboratório a concepção do \gls{REEPS}, com o objetivo de desenvolver um módulo de \gls{EPS} de alta confiabilidade e robustês, tanto em termos de resistência à radiação quanto resistência a falhas.
 
 No momento da escrita deste trabalho, o primeiro modelo de engenharia do \gls{REEPS} está em processo de fabricação.
 Também, a terceira geração de módulos para a plataforma multi-missão está em fase inicial de desenvolvimento, o que implicará no design de ainda mais um modelo de \gls{EPS} feito no SpaceLab.
@@ -61,9 +60,9 @@ Com diferentes projetos, em diferentes estágios de desenvolvimento e diferentes
 Como observado anteriormente, processos de \gls{AIV} mais rigorosos, seguindo padrões como \gls{ECSS} adaptados para o cenário de um nanosatélite, tem sido aplicados em missões envolvendo CubeSats, mais específicamente, na estapa de qualificação do satélite como um todo.
 Porém, em se tratando dos módulos individualmente, específicamente módulos de EPS, não se observam os mesmos cuidados e estruturação nos procedimentos de teste e a adoção desses padrões, qunado mencionados, como em \textcite{mist-eps}, ainda é de forma bastante simplificada.
 
-Neste contexto, propõe-se então a elaboração de um plano de testes, baseado nos padrões da \gls{ECSS}, a ser utlizado para qualificação dos módulos de \gls{EPS} desenvolvidos pelo SpaceLab.
+Neste contexto, propõe-se então a elaboração de um documento contendo diretrizes e orientações acerca da elaboração de planos de testes para módulos \gls{EPS}, baseado nos padrões da \gls{ECSS}, adaptavel para diferentes topologias e arquiteturas, a ser utlizado para os módulos de \gls{EPS} desenvolvidos pelo SpaceLab.
 
-Este trabalho consistira na realização de uma revisão de topologias e arquiteturas de EPSs para CubeSats, seguida por uma análise das normas ECSS-E-ST-10-02 \cite{ecss-e-st-10-02} e ECSS-E-ST-10-03 \cite{ecss-e-st-10-03} relacionadas ao processo de verificação e testes de forma a propor uma série de orientações e requisitos para a elaboração de um plano de testes voltado para EPSs de CubeSats, e que possa ser aplicado a diferentes topologias e arquiteturas. Por fim, como desmonstração, será elaborado um plano de testes para o \gls{EPS2}, seguindo as orientações propostas.
+Este trabalho consistira na realização de uma revisão de topologias e arquiteturas de EPSs para CubeSats, bem comom de campanhas de teste executadas nestes módulos, seguida por uma análise das normas ECSS-E-ST-10-02 \cite{ecss-e-st-10-02} e ECSS-E-ST-10-03 \cite{ecss-e-st-10-03} relacionadas ao processo de verificação e testes, então, a partir destas analises, será elaborado um documento contento uma série de diretrizes e orientações para a elaboração de planos de testes voltado para EPSs de CubeSats. Por fim, como desmonstração, será elaborado um plano de testes para o \gls{EPS2}, seguindo as orientações propostas.
 
 % ----------------------------------------------------------
 \section{Objetivos}\label{sec:objetivos}
@@ -76,6 +75,8 @@ Nas seções abaixo estão descritos o objetivo geral e os objetivos específico
 % ----------------------------------------------------------
 
 Propor uma estrutura de palno de testes aplicavel à diferentes topologias de módulos de \gls{EPS}s de CubeSats baseado nos padrões da \gls{ECSS}.
+
+Elaboração de um documento contendo diretrizes e orientções para preparação de planos de teste para módulos \gls{EPS}, baseado nas normas e padrões da \gls{ECSS}, de forma que o mesmo seja aplicável à diferentes topologias e arquiteturas.
 
 % ----------------------------------------------------------
 \subsection{Objetivos Específicos}

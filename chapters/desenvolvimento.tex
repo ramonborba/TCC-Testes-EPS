@@ -1,5 +1,5 @@
 % ----------------------------------------------------------
-\chapter{Desenvolvimento}
+\chapter{Desenvolvimento} \label{cap:desenvolvimento}
 % ----------------------------------------------------------
 
 
@@ -12,92 +12,48 @@ Para sua utilização é feito um processo de adequação, também chamado de ta
 
 Este processo de adequação inicia-se a partir de definições iniciais acerca do tipo de produto a qual o plano se aplicará e do tipo de modelos a serem utilizados, para então adaptarem-se as linha de base de testes e elaborar o plano de testes.
 
-\red{Comentar sobre requisitos relacionados à condições de teste, tolerancias, incertezas e etc. No caso, serão referenciadas diretamente as normas no documento como recomendações, visto que aplica-los à risca em uma missão universitária seria demasiado demorado e custoso (basicamente impossivel)}
-
 O plano de testes base proposto neste trabalho consistirá de um documento contendo um conjunto de orientações e direcionamentos, detalhando os principais aspectos e considerações relevantes acerca da adaptação destas normas para módulos \gls{EPS} de forma que, a partir dele, possa-se elaborar planos de teste para diferentes topologias e arquiteturas de \gls{EPS}.
 
-O documento proposto abordará os seguintes tópicos:
-\begin{itemize}
-    \item objetivo do plano de testes;
-    \item blocos de testes;
-    \item matriz de testes base;
-    \item documentação.
-\end{itemize}
+% O documento proposto abordará os seguintes tópicos:
+% \begin{alineas}
+%     \item objetivo do plano de testes;
+%     \item blocos de testes;
+%     \item matriz de testes base;
+%     \item documentação.
+% \end{alineas}
 
 
 
 
 
-
-
-% falar direto das definições relacionadas aos testes e linkar com verificação conforme mostrado na fundamentação, não explicar verificação primeiro para eventualmente chegar nos testes
-
-% blocos de testes
-% definição da matriz de testes
-
-% intensidade e duração conforme objetivo, vide tabelas das normas
-
-
-% The tailoring is applied in three steps:
-% • First step: Tailoring is based upon the type of product and selected model philosophy. It consists of the selection of the relevant clauses as presented in Figure D-2.
-
-% NOTE Should your model philosophy combine several models (e.g. QM+FM, or PFM+FM) the relevant clauses for both models need to be selected and merged when performing the second step.
-
-% • Second step: The second tailoring consists in the consolidating Table 5-1, Table 5-3, Table 5-5, Table 6-1, Table 6-3 and Table 6-5 as they were selected in the First step.
-
-% • Third step: The clause and Table called up on Table(s) consolidated at the Second step needs to be added, appropriately merged and tailored. At the end of the three steps, a new document is build which is the tailored Testing standard for a project application.
-
-% The supplier responds to this document by a compliance matrix.
-
-% When performing the three above steps the following points needs to be covered:
-
-% • review the terms in clause 3 to ensure their proper use when performing the tailoring steps;
-
-% • agree, as needed, on the nature of the item (space segment equipment versus space segment element) as per requirement 4.1b, and for equipment, agree the type of, or combination of types (as per Table 5-1 or Table 5-3 or Table 5-5);
-
-% • agree on Test block definition as per requirement 4.3.2.1b in particular for equipment;
-
-% • establish test matrix and test flow based on Figure 5-1 and Table 5-1 or Table 5-3 or Table 5-5 for equipment and Table 6-1, Table 6-3or Table 6-5for space segment element;
-
-% • tailor the corresponding test level and duration based on corresponding Table 5-1 and Table 5-2 or Table 5-4 or Table 5-6 for equipment and Table 6-2, Table 6-4or Table 6-6for space segment element;
-
-% • take the requirements of clauses 5.5 or 6.5 in accordance with the test table(s) (see column “Reference clause”) and tailor them;
-
-% NOTE When several models are considered reference from various tables need to be considered taking into account the tailoring performed for each model.
-
-% • include clause 4.6 in case of re-testing;
-
-% • include clause 7 in case of PFM or FM stand-alone space segment element.
-
-
-\red{
-Tópicos importantes:
-\begin{itemize}
-    \item Considerações iniciais:
-    \begin{itemize}
-        \item Verification level.
-        \item Verification stage.
-        \item Model philosophy.
-    \end{itemize}
-    \item Estrutura do plano de testes.
-    \begin{itemize}
-        \item Blocos de teste.
-        \item "Atividades" de teste.
-        \item Estrutura da documentação.
-    \end{itemize}
-    \item Matriz de testes base da ECSS.
-    \item Descrição de cada bloco de testes.
-    \begin{itemize}
-        \item Objetivo de cada bloco.
-        \item Testes necessários em cada bloco para um EPS.
-        \item Considerações adicionais.
-    \end{itemize}
-    \item Documentação.
-\end{itemize}
-}
+% \red{
+% Tópicos importantes:
+% \begin{alineas}
+%     \item Considerações iniciais:
+%     \begin{alineas}
+%         \item Verification level.
+%         \item Verification stage.
+%         \item Model philosophy.
+%     \end{alineas}
+%     \item Estrutura do plano de testes.
+%     \begin{alineas}
+%         \item Blocos de teste.
+%         \item "Atividades" de teste.
+%         \item Estrutura da documentação.
+%     \end{alineas}
+%     \item Matriz de testes base da ECSS.
+%     \item Descrição de cada bloco de testes.
+%     \begin{alineas}
+%         \item Objetivo de cada bloco.
+%         \item Testes necessários em cada bloco para um EPS.
+%         \item Considerações adicionais.
+%     \end{alineas}
+%     \item Documentação.
+% \end{alineas}
+% }
 
 % ----------------------------------------------------------
-\section{Considerações Iniciais}
+\section{Considerações Iniciais} \label{sec:consideracoes}
 % ----------------------------------------------------------
 
 De acordo com \textcite{ecss-e-st-10-02}, o processo de verificação é dividido em níveis de decomposição do sistema (\textit{verification levels}). Para cada nível, a verificação é feita multiplos estagíos (\textit{verification stages}), com objetivos específicos.
@@ -111,7 +67,7 @@ A partir destas considerações, uma análise deve ser feita de modo que estes c
 
 
 % ----------------------------------------------------------
-\subsection{Nível de Verificação}
+\subsection{Nível de Verificação} \label{sec:nivel-verificacao}
 % ----------------------------------------------------------
 
 
@@ -145,26 +101,111 @@ Com isto, neste trabalho serão consideradas as recomendações da norma ECSS-E-
 
 % \red{
 %     Referencias para aplicar "element" ao EPS:
-%     \begin{itemize}
+%     \begin{alineas}
 %         \item ECSS-E-ST-10-03 Section 6.1a menciona dividir os testes de um "elemet" em service module tests e payload module tests;
 %         \item Tabela do apendice B.1 de ECSS-S-ST-00-01 mostra module como "element" porém também mostra "power" como "subsystem";
 %         \item Definições de "component", "equipment", "subsystem" e "element" em ECSS-S-ST-00-01 Section 2.2;
 %         \item ECSS-S-ST-00-01 Section 2.2.4 menciona service module como "element";
 %         \item ECSS-E-HB-10-02 Section 5.2.1.3.2 menciona descartar o nível de subsystem como redução de custos;
-%     \end{itemize}
+%     \end{alineas}
 % Equipment executa uma função específica, subsystem executa um conjunto de funções, element satisfaz um subset dos objetivos de um segment
 % }
 
 % \red{Apresentar os demais níveis de decomposição? Talvez adicionar um parágrafo relacionado na \autoref{sec:normas-ecss}.}
 
+
 % ----------------------------------------------------------
-\subsection{Obejtivos do Plano de Testes}
+\section{Documentação}
 % ----------------------------------------------------------
 
-% Dentre os estágios de verificação apresentados na \autoref{sec:normas-ecss}, considerou-se \textit{qualification} e \textit{acceptance} como aplicáveis a nível de módulo, no contexto de um CubeSat.
-% Estes estágios tem como finalidade qualificar o projeto do módulo e garantir seu funcionamento adequado e são fatores determinantes no objetivo do plano de testes.
+Em relação à documentação relacionada ao processo de testes, a norma ECSS-E-ST-10-03 \cite{ecss-e-st-10-03} define quatro tipos de documentos a serem gerados, sendo eles: plano de teste (\textit{AIT Plan}), especificação de teste (\textit{Test Specification}), procedimento de teste (\textit{Test Procedure}) e relatório de teste (\textit{Test Report}).
+As especificações detalhadas e requisitos acerca do conteúdo esperado de cada um destes documentos podem ser encontrados nos apêndices das normas ECSS-E-ST-10-03 \cite{ecss-e-st-10-03} e ECSS-E-ST-10-02 \cite{ecss-e-st-10-02}, a seguir será apresentada uma breve contextualizção acerca do propósito de cada documento e por fim, considerações acerca da aplicação desta estrutura de documentação ao contexto deste trabalho.
 
-% Após a execução destas estapas, o módulo estará apto a ser integrado ao restante do satélite, que passará por seu proprio processo de verificação a partir de então.
+
+% Test Plan
+O plano de teste (\textit{AIT plan}) descreve todo o processo de testes, relacionando os testes planejados com os requisitos sendo verificados.
+Ele contem o planejamento de atividades, matrizes de teste conectando os resquisitos aos testes que os verificam, descrição dos equipamentos e instalações necessárias, documentação a ser produzida, bem como organização e cronograma.
+
+
+% Test Specification
+O documento de especificação de teste (\textit{Test Specification}) descreve em detalhes os requisitos e especificações do teste.
+Ele define o propósito do teste, a abordagem utilizada, o item testado, os equipamentos utilizados, instrumentação e incertezas, condições do teste e tolerâncias, critérios de avaliação (sucesso e falha), documentação relacionada e cronograma.
+
+
+% Test Procedure
+O documento de procedimentos de teste (\textit{Test Procedure}) descreve os direcionamentos necessários para a execução do teste.
+Neste documento são descritos os objetivos do teste, referência ao documento de especificação de teste correspondente, configuração do item testado, equipamentos necessários e instruções passo a passo para a execução do teste.
+
+Em casos de testes mais simples, os documentos de especificação e procedimento de teste podem ser combinados em um único documento.
+Em testes mais complexos, múltiplos documentos de procedimento de teste podem originar de um único documento de especificação.
+Ainda, sobreposições de informação entre estes documentos devem ser minimizados, o foco do documento de especificação está na definção e requisitos do teste, enquanto que o documento de procedimentos tem foco opercional, com instruções passo a passo.
+
+
+% Test report
+O relatório de teste (\textit{Test Report}) descreve a execução do teste, os resultados, bem como avaliação e conclusões acerca dos requisistos do teste e critérios de avaliação.
+
+
+Em relação à aplicabilidade deste tipo de documentação, algumas considerações podem ser feitas.
+Primeiramente, ressalta-se que as definições destes documentos visam abranger testes altamente complexos para satélites de grande porte.
+Outro ponto é que, seguindo à risca estas definições, uma grande quantidade de comentos é gerada, especialmente documentos de especificação e procedimentos de teste, visto que, a princípio, seriam gerados ao menos um conjunto destes documentos para cada teste.
+
+Em uma missão de CubeSat, devido a simplicidade de projeto e também dos testes exectados em relação à satélites de grande porte, bem como a proposta de baixo custo e rápido desenvolvimento, e especialmente considerando que neste trabalho o foco está em apenas um dos módulos do satélite, é possivel simplificar e agrupar boa parte destes documentos.
+
+Com isto em mente, é proposto que estes documentos sejam unificados e adaptados ao estilo de documentação de cada projeto.
+No caso do SpaceLab, por exemplo, cada módulo possui um único documento descrevendo todas as características do mesmo, e incluindo também um planejamento de testes e relatórios de testes neste mesmo documento. Portanto, neste caso uma opção seria agrupar os quatro documentos em um único exemplar, e possivelmente anexa-lo ao documento principal do módulo.
+Em projetos com multiplos documentos, poderia-se manter documentos separados, mas agrupar cada tipo de documento em um único exemplar, por exemplo, agrupar todas as especificações de teste em um único documento de especificação.
+
+
+% ----------------------------------------------------------
+\subsection{Estrutura do Plano de Testes} \label{sec:estrutura-plano-testes}
+% ----------------------------------------------------------
+
+
+As definições das normas com realação ao documento de plano de teste (\textit{AIT Plan}) referem-se ao conteúdo esperado para o documento, mas não especifica a estrutura e organização deste documento.
+Além disso, como mencionado acima, estas definições são passíveis de adaptação para o contexto de um módulo de CubeSat.
+Sendo assim, a seguinte organização é proposta como ponto de partida para a elaboração do plano de testes:
+
+\begin{alineas}
+    \item introdução:
+    \begin{alineas}
+        \item contendo uma descrição dos objetivos e conteúdo do documento;
+    \end{alineas}
+
+    \item apresentação do produto:
+    \begin{alineas}
+        \item contento a descrição dos modelos físicos a serem utilizados e seu estado de desenvolvimento;
+    \end{alineas}
+
+    \item programa de testes:
+    \begin{alineas}
+        \item contento o planejamento e matriz de testes, referenciando cada teste com suas especificações, procedimentos e modelo utilizado;
+        \item descrição dos blocos e atividades de teste;
+        \item descrição do sequenciamento das atividades;
+    \end{alineas}
+
+    \item equipamentos e instalações:
+    \begin{alineas}
+        \item contendo uma relação dos equipamentos necessários e instalações a serem utilizadas;
+    \end{alineas}
+
+    \item documentação:
+    \begin{alineas}
+        \item contendo uma descrição dos documentos a serem gerados e seus conteúdos;
+    \end{alineas}
+
+    \item cronograma:
+    \begin{alineas}
+        \item caso o plano de testes tenha o intuito de ser recorrente, o cronograma não é necessário;
+    \end{alineas}
+
+\end{alineas}
+
+Vale ressaltar que a estrutura acima é proposta como sugestão ou ponto de partida, e deve ser adaptada às necessidades e ao estilo de documentação de cada projeto.
+
+
+% ----------------------------------------------------------
+\section{Obejtivos do Plano de Testes} \label{sec:objetivo-testes}
+% ----------------------------------------------------------
 
 
 Considerando o estágio de verificação e tipo de modelo adotado, o plano de testes é definido com um dos três objetivos pricipais: \textit{qualification testing}, \textit{acceptance testing}, \textit{proto-flight testing}.
@@ -172,7 +213,7 @@ A descrição e finalidade de cada objetivo foi apresentada na \autoref{sec:norm
 
 A principal consequencia de um determinado objetivo está na seleção dos testes a serem executados a partir das matrizes de teste base, e principalmente na intensidade e duração dos testes.
 
-De fato, no documento ECSS-E-ST-10-03 \cite{ecss-e-st-10-03}, são apresentadas matrizes de teste base para cada objetivo de teste, sendo que a diferença entre cada uma está na definição de quais testes são considerados como requeridos ou opcionais.
+De fato, no documento ECSS-E-ST-10-03 \cite{ecss-e-st-10-03}, são apresentadas matrizes ou linhas de base de teste para cada objetivo, sendo que a diferença entre cada uma está na definição de quais testes são considerados como requeridos ou opcionais.
 Em relação à intensidade e duração dos testes, são apresentadas tabelas com os dados específicos para cada objetivo.
 
 Em relação às intesidades e durações, serão referenciadas estas tabelas diretamente no plano de testes base quando necessário.
@@ -183,63 +224,336 @@ Em relação às intesidades e durações, serão referenciadas estas tabelas di
 
 
 % ----------------------------------------------------------
-\section{Linha de Base de Testes}
+\section{Linha de Base de Testes} \label{sec:linhas-base}
 % ----------------------------------------------------------
 
-As matrizes de testes base apresentadas em \textcite{ecss-e-st-10-03}, assim como o restante da norma, foram elaboradas de forma bastante abrangente e direcionadas à satélites de grande porte.
-Sendo assim, considerando a simplicidade de projeto de um CubeSat e o contexto de uma missão universitária, uma versão bastante simplificada destas matrizes será adotada.
+As linhas de base de testes apresentadas em \textcite{ecss-e-st-10-03}, assim como o restante da norma, foram elaboradas de forma bastante abrangente e direcionadas à satélites de grande porte.
+Sendo assim, considerando a simplicidade de projeto de um CubeSat e o contexto de uma missão universitária, uma versão adaptada destas matrizes de base será adotada.
 
 De fato, será porposta uma única matriz para os três diferentes objetivos, porém esta será elaborada de forma a abranger diferentes topologias e arquiteturas.
 Ainda, visto que o plano de testes base é voltado diretamente para módulos \gls{EPS}, é possivel propor testes mais específicos, especialmente no caso de testes funcionais e de missão, proporcionando um maior direcionamento em relação as matrizes base.
 
 % Considerações sobre testes em missões anteriores
 
-Com isso, a partir das matrizes de testes base apresentadas na norma ECSS-E-ST-10-03 \cite{ecss-e-st-10-03}, consideraram-se os seguintes testes:
+Com isso, a partir das linhas de base de testes apresentadas na norma ECSS-E-ST-10-03 \cite{ecss-e-st-10-03}, considerou-se que a matriz de testes a ser proposta deve conter os seguintes testes:
 
-\begin{itemize}
-    \item Funcionais;
-    \item Performance;
-    \item Missão;
-    \item Propriedades físicas;
-    \item Vibração;
-    \item Termo vácuo.
-    \item \red{EMC?}
-\end{itemize}
-
-
-Considerações a respeito de cada item
+\begin{alineas}
+    \item testes funcionais;
+    \item testes de performance;
+    \item testes de missão;
+    \item propriedades físicas;
+    \item vibração;
+    \item termo vácuo.
+\end{alineas}
 
 
-% ----------------------------------------------------------
-\section{Testes Funcionais e de Performance}
-% ----------------------------------------------------------
+% Considerações a respeito de cada item
 
-Incluir testes de missão aqui?
 
-Selecionar testes funcionais consideranto as diferentes topologias e arquiteturas apresentadas
+Para os testes de propriedades físicas, vibração e termo vácuo (testes mecânicos), os requisistos de intensidade e duração, bem como detalhes acerca da especificação destes testes podem ser referenciados diretamente das seções 6.5.2 e 6.5.4, e das tabelas 6-2, 6-4 e 6-6 da norma ECSS-E-ST-10-03 \cite{ecss-e-st-10-03}.
+
+Em relação aos testes funcionais, de performance e de missão, apenas uma visão geral da finalidade de cada um destes testes é apresentada, visto que estes tipos de teste são bastante específicos ao produto sendo testado e à própria missão, e devem ser especificados caso a caso.
+
+O plano de testes base tem o intuito de ser aplicável às diferentes implmentações de módulos, sendo assim, os testes funcionais, de performance e de missão devem levar um consideração as diferentes possibilidades.
+No \autoref{cap:fundamentacao}, foram apresentadas diversas topologias e arquiteturas de \gls{EPS}s, bem como campanhas de testes destes módulos,que serão analisadas a fim de propor uma matriz de testes mais abrangente.
 
 
 % ----------------------------------------------------------
-\section{Matriz de Testes Base}
+\section{Testes Funcionais, de Performance e de Missão} \label{sec:analises-testes}
 % ----------------------------------------------------------
 
-Blocos de teste
+Coforme apresentados na norma ECSS-E-ST-10-03 \cite{ecss-e-st-10-03}, os testes funcionais, de performance e de missão tem as seguintes finalidades:
 
-Matriz proposta
+\begin{alineas}
+    \item testes funcionais tem a finalidade de verificar que o produto apresenta o funcionamento adequado de acordo com as suas especificações e requisitos em todos os seus módos de operação:
+    \begin{alineas}
+        \item pode-se ainda dividir-se em testes funcionais mecânicos e elétricos;
+    \end{alineas}
+    \item testes de performance tem a finalidade de verificar que o produto apresenta a performance adequada na execução de suas funções de acordo com as suas especificações e requisitos;
+    \item testes de missão tem a finalidade de simular casos de missão esperados, em cenários nominais e críticos, durante a operação da missão, dentro do que se pode simlar em terra:
+    \begin{alineas}
+        \item casos de missão referem-se a situações e eventos esperados durante a missão, bem como a operação nominal de acordo com o planejamento da missão.
+    \end{alineas}
+\end{alineas}
 
-Considerações a cerca da adaptação da matriz
+Com isso em mente, analisando as topologias e arquiteturas de diferentes projetos, apresentadas na \autoref{sec:arq-top}, identificou-se um conjunto de características presentes nos diferentes designs relacionadas à funcionalidades de um módulo \gls{EPS}:
+
+\begin{alineas}
+    \item multiplos estágios de conversão:
+    \begin{alineas}
+        % \item reguladores para \gls{MPPT}; % Interface com painéis solares
+        % \item reguladores para bateria (\gls{BCR});
+        % \item reguladores para os barramentos de saída;
+        \item os módulos possuem reguladores em diversos pontos da distribuição de energia: nas interfaces com os painéis solares, para regulagem de carga da bateria e para os barrametos de saída;
+    \end{alineas}
+
+    \item controle dos barramentos:
+    \begin{alineas}
+        \item os barramentos de saída costumam ter chaves de potência possibilitando controle individual;
+        \item pode-se ter também o controle via pinos de \textit{enable} dos próprios reguladores;
+    \end{alineas}
+
+    \item circuitos de proteção;
+    \begin{alineas}
+        % \item proteção dos barramentos;
+        % \item proteção das baterias;
+        \item estas mesmas chaves de potência costumam possuir limitação de corrente como proteção;
+        \item os módulos podem possuir também circuitos de proteção para as baterias, utlizando chaves para controle das direções de carga e descarga;
+    \end{alineas}
+
+    \item aquecimento de baterias;
+    \begin{alineas}
+        \item o sistema de aquecimento normalmente é feito através de resistores de potência;
+    \end{alineas}
+    
+    \item monitoramento;
+    \begin{alineas}
+        % \item tensão e corrente nos barramentos;
+        % \item tensão e corrente nas baterias;
+        % \item temperatura das baterias;
+        \item sensores de tensão e corrente são empregados nos barramentos principais e em diversos pontos de interesse;
+        \item sensores de temperatura também são utilizados, especialmente nas baterias;
+    \end{alineas}
+
+    \item presença de microcontrolador;
+    \begin{alineas}
+        % \item firmware;
+        % \item protocolos de comunicação;
+        % \item leitura/escrita de dados;
+        % \item funções específicas; % startup do satélite, modos de energia, modos de operação, proteções emplementadas via software...
+        \item microcontroladores são utilizados para comunicação, leitura dos sensores e gerenciamento de dados;
+        \item em alguns casos, são utilizados também para execução de algorítimos, como \gls{PO} para controle do \gls{MPPT};
+        \item podem executar também funções operacionais da missão, como inicialização do satélite e controle dos modos de operaçãa.
+    \end{alineas}
+\end{alineas}
+
+Todo conjunto de características servirá de base para os testes funcionais propostos na matriz do plano de testes base, de forma que, ao ser elaborado um plano de testes específico, possam ser selecionados os testes funcionais relevantes para uma dada arquitetura.
+
+Como base para os testes de performance e de missão, convem analisar-se as campanhas de testes de módulos \gls{EPS} apresentadas na \autoref{sec:testes-epss}.
+Na \autoref{tab:testes-eps}, tem-se uma visão geral dos principais tipos de testes executados nos módulos em cada campanha de testes apresentada.
+Uma descrição mais detalhada sobre os testes em cada módulo encontra-se na seção menciona acima.
+
+\begin{table}[ht!]
+    \ABNTEXfontereduzida
+    \centering
+    \caption{Tipos de testes executados em campanha de testes de EPSs}
+    \begin{tabular}{ccccccc}
+        \toprule
+        \multirow{2}{*}{\textbf{EPS}} & \multicolumn{6}{c}{\textbf{Testes}} \\
+        \cline{2-7}
+        & \textbf{Inspeções} & \textbf{Funcionais} & \textbf{Eficiência} & \textbf{Missão} & \textbf{Estresse} & \textbf{Ambiente} \\
+        \midrule
+        \midrule
+        Aalto-2   & - & X & X & - & - & - \\
+        ESTCube-1 & - & X & X & - & X & X \\
+        MIST      & - & X & X & X & - & - \\
+        EPS 2.0   & X & X & - & - & - & - \\
+        \bottomrule
+    \end{tabular}
+    \label{tab:testes-eps}
+\end{table}
+
+
+Aqui, inspeções referem-se principalmente em inspecionar visualmente as condições de fabricação e transporde dos módulos, físicos utilizados.
+Testes de ambiente referem-se aos testes de vibração, termo vácuo, choque mecânico, enrte outros, ou seja, testes relacionados às condições do ambiente espacial e do lançamento.
+Testes de estresse referem-se a submeter os componentes aos seus limites máximos e também testes como o burn-in.
+Os testes de eficiência referem-se principalmente à eficiência dos diversos conversores presentes nos módulos.
+
+Testes classificados como funcionais envolvem teste dos conversores com as cargas esperadas, testes de comunicação, leitura de sendores, funções do microcontrolador, funcionamento de algorítimos, entre outros.
+
+Como pode ser visto, dentre os módulos analisado, um grande foco é dado para testes funcionais, principalmente para o funcionamento dos conversores e circuitos de proteção, porém, apenas no EPS 2.0 foram relatados testes funcionais além destes.
+Nota-se também que em nemhuma campanha foram realizados testes de todos os tipos listados.
+
+Os testes de eficiência dos conversores são o principal interesse relacionado à performance nos \gls{EPS}s.
+Em alguns casos, tem-se inclusive requisistos específicos relacionados à eficiencia, como em \textcite{aalto-eps} em que foi dado um grande foco em testes de eficiência de conversores.
+
+Em relação aos testes de missão, apenas em \textcite{mist-eps} foram relatados simulações de diferentes cenários esperados.
+Neste caso, foram simulados o funcionamento das diferente cargas úteis do satélite, em termos de tempo de acionamento e consumo, conforme a operação planejada e em diferentes cenários.
+
+
+% ----------------------------------------------------------
+\section{Matriz de Testes Base} \label{sec:matriz-base}
+% ----------------------------------------------------------
+
+
+Com base nas análises das diferentes topologias e arquiteturas, bem como das campanhas de testes e também das normas da \gls{ECSS}, é proposta a matriz de testes mostrada na \autoref{tab:matriz-base} com linha de base.
+
+\red{A matriz de testes deve também linkar cada teste com seus respectivos documentos associados (TSPE, TPRO) e modelo físico utilizado}
+
+\begin{table}
+    \ABNTEXfontereduzida
+    \centering
+    \caption{Matriz de testes base}
+    \begin{tabular}{cl}
+        \toprule
+        \textbf{Test Block} & \textbf{Test Activity} \\
+        \midrule
+        \midrule
+        \multirow{4}{*}{Inspection}     & Manufacturing Inspection              \\
+                                        & Electrical Inspection                 \\
+                                        & Mechanical Inspection                 \\
+                                        & Integration Inspection                \\
+        \midrule
+        \multirow{8}{*}{Functional}     & Harvesting System                     \\
+                                        & Output Channels Regulators            \\
+                                        & Power Consumption                     \\
+                                        & Battery Management            \\
+                                        & Output Channels Switches              \\
+                                        & Protection Circuits                   \\
+                                        & Sensor Readings                       \\
+                                        & Communication Buses                   \\
+        \midrule
+        \multirow{4}{*}{Performance}    & Harvesting Regulator Efficiency       \\
+                                        & Output Channels Regulators Efficiency \\
+                                        & Battery Charging Regulator Efficiency \\
+                                        & Overall/System Efficiency             \\
+        \midrule
+        Mission                         & Mission Cases                         \\
+        \midrule
+        \multirow{2}{*}{Environmental}  & Vibration                             \\
+                                        & Thermal Vacuum                        \\
+        \bottomrule
+    \end{tabular}
+    \fonte{Elaborado pelo autor.}
+    \label{tab:matriz-base}
+\end{table}
+
+
+A matriz está organizada em blocos e atividades de teste, cada bloco pode conter diversas atividades relacionadas, e cada atividade pode consistir de multiplos testes individuais.
+
+A matriz está organizada em blocos teste, sendo estes: integração, testes funcionais, testes de performance, testes de missão e testes ambientais.
+Cada bloco é composto por um conjunto de atividades de testes realcionadas, por fim, cada atividade é composta por um conjunto de testes individuais.
+Desta forma,testes relacionados podem ser agrupados e executados de maneira organizada.
+
+O bloco de inspeção tem como finalidade verificar a integridade do processo de fabricação e conformidade do modelo físico em relação aos arquivos de projeto, garantindo qu não hajam defeitos de fabricação nos modelos testados.
+Este bloco é composto pelas seguintes atividades:
+
+\begin{alineas}
+    \item inspeção de fabricação:
+    \begin{alineas}
+        \item tem a finalidade de verificar a integridade do processo de fabricação e transporte;
+        \item consiste de inspeções visuais das condições de embalagem e transporte, bem como conformidade com requisistos do processo de fabricação;
+    \end{alineas}
+
+    \item inspeção elétrica:
+    \begin{alineas}
+        \item tem a finalidade de verificar a integridade elétrica do módulo;
+        \item consiste de verificar conformidade em relação aos esquemáticos, qualidade das soldas, ausencia de curto circuitos e alimentar o módulo pela primeira vez;
+    \end{alineas}
+
+    \item inspeção mecânica:
+    \begin{alineas}
+        \item tem a finalidade de verificar as propriedade físicas em relação aos arquivos de projeto;
+        \item consite na medição das dimenções da placa, massa, posição e tamanho das furações (\textit{mounting holes});
+    \end{alineas}
+
+    \item inspeção de integração:
+    \begin{alineas}
+        \item tem a finalidade de verificar que o módulo pode ser fisicamente integrado ao satélite;
+        \item consiste em verificar a pinagem e posição de conectores em relação aos esquemáticos;
+    \end{alineas}
+\end{alineas}
+
+
+O bloco de testes funcionais tem como finalidade verificar que o módulo é capaz de executar todas as suas funções requeridas.
+Este bloco é composto pelas seguintes atividades:
+
+\begin{alineas}
+    \item sistema de harvesting:
+    \begin{alineas}
+        \item tem a finalide de verificar o funcionamento do sistema de harvesting do módulo;
+        \item consiste em teste dos conversores utilizados, bem como o funcionamento de sistemas de \gls{MPPT} e algorítimos relacionados;
+    \end{alineas}
+
+    \item canais de saída:
+    \begin{alineas}
+        \item tem a finalidade de verificar o funcionamento dos conversores dos barramentos de saída do módulo;
+        \item consiste na aplicação de cargas aos conversores, conforme os limites esperados durante a operção da missão;
+    \end{alineas}
+
+    \item consumo de potência:
+    \begin{alineas}
+        \item tem a finalidade de verificar o consumo de potência do módulo isoladamente;
+        \item consiste na medição do consumo do módulo em estado ocioso, sem cargas conectadas.
+    \end{alineas}
+
+    \item gerenciamento das baterias:
+    \begin{alineas}
+        \item tem a finalidade de verificar o funcionamento do sistema de gerenciamento e monitoramento da bateria;
+        \item consiste no teste de reguladores de carga, funcionamento de sistemas de monitoramento, testes do sistema de aquecimento e algorímos de controle relacionados;
+    \end{alineas}
+
+    \item chaveamendo dos canais de saída:
+    \begin{alineas}
+        \item tem a finalidade de verificar o funcionamento do sistema de controle dor barramentos de saída;
+        \item consiste em testes das chaves de potências dos barramentos e funcionamento dos pinos de \textit{enable} do s conversores;
+    \end{alineas}
+
+    \item circuitos de proteção:
+    \begin{alineas}
+        \item tem a finalidade de verificar o funcionamento dos circuitos de proteção presentes no módulo;
+        \item consiste no teste da limitação de corrente de chaves de potência, controle de carga e descarga das baterias e algorítimos relacionados;
+    \end{alineas}
+
+    \item leitura de sensores:
+    \begin{alineas}
+        \item tem a finalidade de verificar o funcinoamento e a leitura correta dos sensores presentes no módulo;
+        \item consiste no testes e comparação das leituras dos sensores do módulo com instrumentos de medição;
+    \end{alineas}
+
+    \item barramentos de comunicação:
+    \begin{alineas}
+        \item tem a finalidade de vericar a integridade e correta operação dos barramentos de comunicação do módulo;
+        \item consiste em testes dos sistemas de comunição tanto com outros módulos do satélite quato com periféricos do próprio módulo, verificar a integridade dos sinais e da informação transmitida.
+    \end{alineas}
+\end{alineas}
+
+O bloco de testes de performance tem como finalidade de verificar que a performance do módulo na execução de suas funções está de acordo com os requisistos.
+O grande foco deste bloco está em verificar a eficiência dos diversos estágios de conversão presentes no \gls{EPS}, o que costuma ser feito aplicando-se cargas incrementais aos reguladores, obtendo-se a eficiência para diversos pontos de operação.
+Este bloco é composto pelas seguintes atividades:
+
+\begin{alineas}
+    \item eficiência do sistema de harvesting:
+    \begin{alineas}
+        \item tem a finalidade de verificar a eficiência dos reguladores utilizados no sistema de harvesting;
+    \end{alineas}
+
+    \item eficiência dos conversores de saída:
+    \begin{alineas}
+        \item tem a finalidade de verificar a eficiência dos reguladores utilizados nos barramentos de saída do módulo;
+    \end{alineas}
+
+    \item eficiência dos reguladores de carga das baterias:
+    \begin{alineas}
+        \item tem a finalidade de verificar a eficiência dos reguladores utilizados na interface com as baterias;
+    \end{alineas}
+
+    \item eficiência do sistema:
+    \begin{alineas}
+        \item tem a finalidade de verificar a eficiência do sistema como um todo;
+    \end{alineas}
+
+\end{alineas}
+
+
+O bloco de testes de missão tem como finalidade verificar a operação correta do módulo em relação ao conceito de operação da missão.
+As atividade de teste deste envolverão a simulação, dentro do que é factivel em terra, de cenários esperados durante a operação do módulo, em concordância com o conceito de operações da missão.
+Incluem-se também simulações cenários críticos e situações adversas, bem como casos com requisitos de tempo críticos (\textit{time critical}).
+No caso deste bloco, mesmo a nível de atividades de teste, há uma grande dependência em relação à missão e aos objetivos específicos de cada implementação, portanto não serão propostas atividades ou casos específicos neste momento.
+
+O bloco de testes ambientais tem a finalidade de verificar que o módulo é capaz de sobreviver e operar nas condições ambientais em que será submetido.
+As atividades envolvem testes de vibração, que remetem às condições durante o lançamento, e termo vácuo, que remete ao amiente espacial.
+
 
 % ----------------------------------------------------------
 \section{Requisitos Adicionais}
 % ----------------------------------------------------------
 
-condições de teste, tolerância, incerteazs
+\red{Comentar sobre requisitos relacionados à condições de teste, tolerancias, incertezas e etc. No caso, serão referenciadas diretamente as normas no documento como recomendações, visto que aplica-los à risca em uma missão universitária seria demasiado demorado e custoso (basicamente impossivel)}
 
-Equipamentos utilizados e local de testes
+As normas da \gls{ECSS} apresentam também requisitos relacionados à testes de forma geral, que independem do produto para qual está sendo realizado o tailoring.
+Estes requisitos abordam condições de testes, especificação dos locais de teste, equipamentos utilizados, tolerâncias e incertezas, revisões, entre outros.
 
+Nestes casos, quando necessário, serão refereciados as normas no plano de testes base diretamente.
 
-% ----------------------------------------------------------
-\section{Documentação}
-% ----------------------------------------------------------
-
-Apresentar estrutura do documento de plano de testes, test specifications, procedures e report
+\red{Comentar sobre requisito de rastreabilidade dos testes até os requisitos verificados}

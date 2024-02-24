@@ -176,6 +176,11 @@ Sendo assim, a seguinte organização é proposta como ponto de partida para a e
         \item contento a descrição dos modelos físicos a serem utilizados e seu estado de desenvolvimento;
     \end{alineas}
 
+    \item requisitos em verificação:
+    \begin{alineas}
+        \item contento a listagem dos requisitos do módulo que serão verificados com a execução do plano de testes;
+    \end{alineas}
+
     \item programa de testes:
     \begin{alineas}
         \item contento o planejamento e matriz de testes, referenciando cada teste com suas especificações, procedimentos e modelo utilizado;
@@ -394,8 +399,8 @@ Com base nas análises das diferentes topologias e arquiteturas, bem como das ca
         \midrule
         \multirow{7}{*}{Funcionais}     & Sistema de \textit{harvesting}        \\
                                         & Reguladores dos canais de saída       \\
-                                        & Gerenciamento das Baterias    \\
-                                        & Chaveamento dos canais de saída       \\
+                                        & Gerenciamento das baterias            \\
+                                        & Controle dos canais de saída          \\
                                         & Circuitos de proteção                 \\
                                         & Leitura de sensores                   \\
                                         & Barramentos de comunicação            \\
@@ -421,7 +426,7 @@ Com base nas análises das diferentes topologias e arquiteturas, bem como das ca
 
 A matriz está organizada em blocos teste, sendo estes: integração, testes funcionais, testes de performance, testes de missão e testes ambientais.
 Cada bloco é composto por um conjunto de atividades de testes relacionadas, por fim, cada atividade é composta por um conjunto de testes individuais.
-Ainda, a matriz deve relacionar cada teste individual com suas respectivas especificações, procedimentos, modelo físico utilizado e requisitos sendo verificados, de fora que, no plano de testes específico, esta matriz apresentaria colunas adicionais relacionadas a estes pontos, podendo inclusive ser dividida em múltiplas matrizes para melhor organização.
+Ainda, a matriz deve relacionar cada teste individual com suas respectivas especificações, procedimentos, modelo físico utilizado e requisitos sendo verificados, de forma que, no plano de testes específico, esta matriz apresentaria colunas adicionais relacionadas a estes pontos, podendo inclusive ser dividida em múltiplas matrizes para melhor organização.
 Desta forma,testes relacionados podem ser agrupados e executados de maneira organizada.
 
 A nível de testes individuais, a dependência da arquitetura específica do módulo alvo dos testes aumenta significativamente, tornando inviável a proposta de testes individuais que possam abranger diferentes arquiteturas.
@@ -475,22 +480,16 @@ Este bloco é composto pelas seguintes atividades:
         \item consiste na aplicação de cargas aos conversores, conforme os limites esperados durante a operação da missão;
     \end{alineas}
 
-    \item consumo de potência:
-    \begin{alineas}
-        \item tem a finalidade de verificar o consumo de potência do módulo isoladamente;
-        \item consiste na medição do consumo do módulo em estado ocioso, sem cargas conectadas.
-    \end{alineas}
-
     \item gerenciamento das baterias:
     \begin{alineas}
         \item tem a finalidade de verificar o funcionamento do sistema de gerenciamento e monitoramento da bateria;
         \item consiste no teste de reguladores de carga, funcionamento de sistemas de monitoramento, testes do sistema de aquecimento e algoritmos de controle relacionados;
     \end{alineas}
 
-    \item chaveamento dos canais de saída:
+    \item controle dos canais de saída:
     \begin{alineas}
         \item tem a finalidade de verificar o funcionamento do sistema de controle dor barramentos de saída;
-        \item consiste em testes das chaves de potências dos barramentos e funcionamento dos pinos de \textit{enable} do s conversores;
+        \item consiste em testes das chaves de potências dos barramentos e funcionamento dos pinos de \textit{enable} dos conversores;
     \end{alineas}
 
     \item circuitos de proteção:
@@ -517,6 +516,12 @@ O grande foco deste bloco está em verificar a eficiência dos diversos estágio
 Este bloco é composto pelas seguintes atividades:
 
 \begin{alineas}
+    \item consumo de potência:
+    \begin{alineas}
+        \item tem a finalidade de verificar o consumo de potência do módulo isoladamente;
+        \item consiste na medição do consumo do módulo em condições normais de operação, sem cargas conectadas.
+    \end{alineas}
+
     \item eficiência do sistema de harvesting:
     \begin{alineas}
         \item tem a finalidade de verificar a eficiência dos reguladores utilizados no sistema de harvesting;
@@ -550,14 +555,14 @@ As atividades envolvem testes de vibração, que remetem às condições durante
 
 
 % ----------------------------------------------------------
-\section{Requisitos de Teste}
+\section{Requisitos Gerais}
 % ----------------------------------------------------------
 
-\red{Comentar sobre requisitos relacionados à condições de teste, tolerancias, incertezas e etc. No caso, serão referenciadas diretamente as normas no documento como recomendações, visto que aplica-los à risca em uma missão universitária seria demasiado demorado e custoso (basicamente impossivel)}
 
 As normas da \gls{ECSS} apresentam também requisitos relacionados à testes de forma geral, que independem do produto para qual está sendo realizado o tailoring.
-Estes requisitos abordam condições de testes, especificação dos locais de teste, equipamentos utilizados, tolerâncias e incertezas, revisões, entre outros.
+Estes requisitos abordam condições de teste, tolerâncias, incertezas de medição, bem como revisões.
+Nestes casos, quando necessário, serão referenciadas as normas no documento de diretrizes diretamente, visto que não há considerações específicas a serem feitas em relação ao \gls{EPS}.
 
-Nestes casos, quando necessário, serão referenciadas as normas no documento de diretrizes diretamente.
-
-\red{Comentar sobre requisito de rastreabilidade dos testes até os requisitos verificados}
+Em relação as revisões, são definidas uma série de revisões formais a serem feitas antes e após cada teste.
+No contexto de uma missão de CubeSat, a realização de tantas revisões acarretaria num grande aumento no tempo de cumprimento da missão e também ao custo do projeto, especialmente  se aplicadas ao nível de testes de um único módulo.
+Sendo assim, neste momento, estas revisões não foram consideradas aplicáveis.

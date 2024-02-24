@@ -378,8 +378,6 @@ Neste caso, foram simulados o funcionamento das diferente cargas úteis do saté
 
 Com base nas análises das diferentes topologias e arquiteturas, bem como das campanhas de testes e também das normas da \gls{ECSS}, é proposta a matriz de testes mostrada na \autoref{tab:matriz-base} com linha de base.
 
-\red{A matriz de testes deve também linkar cada teste com seus respectivos documentos associados (TSPE, TPRO) e modelo físico utilizado}
-
 \begin{table}
     \ABNTEXfontereduzida
     \centering
@@ -394,7 +392,7 @@ Com base nas análises das diferentes topologias e arquiteturas, bem como das ca
                                         & Inspeção Mecânica                     \\
                                         & Inspeção de Integração                \\
         \midrule
-        \multirow{7}{*}{Funcionais}     & sistema de \textit{harvesting}        \\
+        \multirow{7}{*}{Funcionais}     & Sistema de \textit{harvesting}        \\
                                         & Reguladores dos canais de saída       \\
                                         & Gerenciamento das Baterias    \\
                                         & Chaveamento dos canais de saída       \\
@@ -402,7 +400,7 @@ Com base nas análises das diferentes topologias e arquiteturas, bem como das ca
                                         & Leitura de sensores                   \\
                                         & Barramentos de comunicação            \\
         \midrule
-        \multirow{5}{*}{Performance}    & Consumo de potência                   \\
+        \multirow{5}{*}{Performance}    & Consumo de potência do módulo         \\
                                         & Eficiência do regulador do sistema de \textit{harvesting} \\
                                         & Eficiência dos reguladores dos canais de saída \\
                                         & Eficiência do regulador de carga das baterias \\
@@ -421,11 +419,15 @@ Com base nas análises das diferentes topologias e arquiteturas, bem como das ca
 \end{table}
 
 
-A matriz está organizada em blocos e atividades de teste, cada bloco pode conter diversas atividades relacionadas, e cada atividade pode consistir de múltiplos testes individuais.
-
 A matriz está organizada em blocos teste, sendo estes: integração, testes funcionais, testes de performance, testes de missão e testes ambientais.
 Cada bloco é composto por um conjunto de atividades de testes relacionadas, por fim, cada atividade é composta por um conjunto de testes individuais.
+Ainda, a matriz deve relacionar cada teste individual com suas respectivas especificações, procedimentos, modelo físico utilizado e requisitos sendo verificados, de fora que, no plano de testes específico, esta matriz apresentaria colunas adicionais relacionadas a estes pontos, podendo inclusive ser dividida em múltiplas matrizes para melhor organização.
 Desta forma,testes relacionados podem ser agrupados e executados de maneira organizada.
+
+A nível de testes individuais, a dependência da arquitetura específica do módulo alvo dos testes aumenta significativamente, tornando inviável a proposta de testes individuais que possam abranger diferentes arquiteturas.
+Com isso, limitou-se ao nível de atividades de teste para a matriz proposta.
+
+Ressalta-se também que esta matriz é proposta como uma linha de base, e testes adicionais específicos a uma determinada arquitetura, não cobertos na matriz base, podem ser adicionados conforme necessário.
 
 O bloco de inspeção tem como finalidade verificar a integridade do processo de fabricação e conformidade do modelo físico em relação aos arquivos de projeto, garantindo que não hajam defeitos de fabricação nos modelos testados.
 Este bloco é composto pelas seguintes atividades:

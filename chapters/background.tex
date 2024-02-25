@@ -155,7 +155,7 @@ O barramento que interliga estes elementos, no contexto deste trabalho, será ch
 \end{figure}
 
 
-O estudo de \textcite{comprehensive-review-eps} mostra uma revisão de diferentes topologias de \gls{EPS} utilizados em diversas missões e propõe uma forma de classifica-los de acordo com quatro aspectos principais em comum nas diversas topologias:
+O estudo de \textcite{comprehensive-review-eps} mostra uma revisão de diferentes topologias de \gls{EPS} utilizados em diversas missões e propõe uma forma de classificá-los de acordo com quatro aspectos principais em comum nas diversas topologias:
 \begin{alineas}
     \item Estágios de conversão;
     \item Tipo de distribuição; % Localização dos conversores dos barramentos de saída
@@ -170,7 +170,7 @@ Em relação à localização dos conversores dos barramentos de saída, tem-se 
 Em relação ao tipo de sistema de harvesting, que realiza a interface com os painéis solares, tem-se topologias com \gls{DET}, onde os painéis são conectados diretamente ao sistema de armazenamento e/ou aos reguladores das cargas, ou topologias com \gls{PPT}, onde os painéis são conectados à conversores dc-dc operados de forma a realizar \gls{MPPT}.
 Adicionalmente, no estudo de \textcite{sara-review-eps}, diferenciam-se entre utilização de conversores discretos ou via circuitos integrados, e também apresenta-se a utilização de reguladores VLDO para a interface com os painéis solares.
 
-Em relação à regulação do barramento principal, tem-se topologias com barramento principal regulado, onde há um conversor regulando o mesmo para uma tensão de referência, não-regulado, onde os terminais da bateria são conectados diretamente ao barramento, ou parcialmente regulado, em que o barramento é regulado apenas durante o período iluminado da orbita.
+Em relação à regulação do barramento principal, tem-se topologias com barramento principal regulado, onde há um conversor regulando o mesmo para uma tensão de referência, não-regulado, onde os terminais da bateria são conectados diretamente ao barramento, ou parcialmente regulado, em que o barramento é regulado apenas durante o período iluminado da órbita.
 
 
 
@@ -183,14 +183,14 @@ A seguir serão analisadas as arquiteturas de diferentes modelos de \gls{EPS}, t
 %  ==== Aalto-2 EPS ====
 \subsubsection{Aalto-2 EPS}
 
-O \gls{EPS} desenvolvido para o satélite Aalto-2, descrito em \textcite{aalto-eps}, utiliza uma topologia de distribuição centralizada, conversão multe estágio, sistema de harvesting com \gls{PPT} e barramento principal não regulado.
+O \gls{EPS} desenvolvido para o satélite Aalto-2, descrito em \textcite{aalto-eps}, utiliza uma topologia de distribuição centralizada, conversão multi-estágio, sistema de harvesting com \gls{PPT} e barramento principal não regulado.
 Além disso, possui um microcontrolador MSP430 para controle e monitoramento e redundâncias em hardware para as funcionalidades principais como conversores DC-DC, reguladores de carga de bateria e \gls{MPPT}.
 
 O sistema de harvesting deste \gls{EPS} possui dois canais com CIs dedicados para a realização de \gls{MPPT}. O conjunto de painéis solares de cada eixo, X e Y, é ligado ao barramento principal através de um \gls{BCR}, neste caso o LT3652.
 
 Para armazenamento de energia o EPS do Aalto-2 utilizará duas células de baterias em paralelo (configuração 1s2p). O modelo das baterias ainda não havia sido determinado, porém a inclusão de circuitos de proteção contra over-charge e over-discharge, assim como a necessidade de um sistema de aquecimento para as baterias já estavam previstos.
 
-O sistema de distribuição consiste em dois barramentos, de 3.3V e 5V, utilizando os reguladores LTC1875 e LTC3122 respectivamente.
+O sistema de distribuição consiste em dois barramentos, de 3,3V e 5V, utilizando os reguladores LTC1875 e LTC3122 respectivamente.
 Cada barramento possui reguladores duplicados em redundância fria.
 Possui também um barramento dedicado para alimentar o microcontrolador.
 Para controle dos barramentos foram utilizados MOSFETs MAX890L, que além de atuarem como chaves, possuem limitação de corrente proporcionando proteção contra over-current.
@@ -208,14 +208,14 @@ Para controle e monitoramento, foi utilizado o microcontrolador MSP430-F1611. Te
 %  ==== ESTCube-1 EPS ====
 \subsubsection{ESTCube-1}
 
-O \gls{EPS} desenvolvido para o satélite ESTCube-1, descrito em \textcite{estcube-eps}, utiliza uma topologia de distribuição centralizada, conversão multe estágio, sistema de harvesting com \gls{PPT} e barramento principal não regulado.
+O \gls{EPS} desenvolvido para o satélite ESTCube-1, descrito em \textcite{estcube-eps}, utiliza uma topologia de distribuição centralizada, conversão multi-estágio, sistema de harvesting com \gls{PPT} e barramento principal não regulado.
 Possui também um microcontrolador para controle e monitoramento e inclui redundâncias em hardware.
 
 O sistema de harvesting é composto por três canais de \gls{MPPT}. Cada canal utiliza um chip SPV1040 para a realizar o \gls{MPPT} de um conjunto de painéis correspondente a um dos eixos do satélite.
 
 Duas células de bateria de íon de lítio são utilizadas para armazenamento, com monitoramento de tensão, corrente e temperatura. Cada célula é conectada ao barramento principal através de duas chaves de potência TPS2557, controlando as direções de carga e descarga separadamente e servindo como proteção.
 
-O sistema de distribuição é composto por três barramentos, 3.3V, 5V e 12V, utilizando os reguladores LTC3440 para os barramentos de 3.3V e 5V, e LM2700 para o barramento de 12V.
+O sistema de distribuição é composto por três barramentos, 3,3V, 5V e 12V, utilizando os reguladores LTC3440 para os barramentos de 3,3V e 5V, e LM2700 para o barramento de 12V.
 Cada barramento possui os conversores duplicados em redundância quente.
 O microcontrolador e outros circuitos do \gls{EPS} são alimentados por um barramento secundário dedicado.
 Os barramentos possuem também chaves de potência, TPS2551 ou TPS2557, com proteção contra over-current, que conectam os reguladores tanto ao barramento principal quanto aos barramentos de saída.
@@ -232,11 +232,11 @@ Este \gls{EPS} é responsável por realizar os procedimentos de inicialização 
 %  ==== MIST EPS ====
 \subsubsection{GomSpace NanoPower P31u e BP4}
 
-O NanoPower P31u \cite{p31u-datasheet} é um modelo comercial de \gls{EPS} fabricado pela empresa GomSpace. Utiliza uma topologia de distribuição centralizada, conversão multe estágio, sistema de harvesting com \gls{PPT} e barramento principal não regulado. Possui também um microcontrolador para controle, configuração e comunicação.
+O NanoPower P31u \cite{p31u-datasheet} é um modelo comercial de \gls{EPS} fabricado pela empresa GomSpace. Utiliza uma topologia de distribuição centralizada, conversão multi-estágio, sistema de harvesting com \gls{PPT} e barramento principal não regulado. Possui também um microcontrolador para controle, configuração e comunicação.
 
 O sistema de harvesting consiste de três canais com conversores para realização de \gls{MPPT}, controlados pelo microcontrolador.
 
-O sistema de distribuição utiliza de dois barramentos regulados, de 3.3V e 5V, e seis canais de saída controlados por chaves de potência com limitação de corrente, configuráveis individualmente para 3.3V ou 5V.
+O sistema de distribuição utiliza de dois barramentos regulados, de 3,3V e 5V, e seis canais de saída controlados por chaves de potência com limitação de corrente, configuráveis individualmente para 3,3V ou 5V.
 
 Um microcontrolador é responsável pelo gerenciamento do \gls{EPS} e o comportamento pode ser configurado pelo usuário via interface \gls{I2C}.
 Dentre as funcionalidades tem-se: modo de operação do \gls{MPPT}, acesso aos logs de tensões, correntes e temperaturas em diversos pontos do sistema, acionamento de aquecedor de baterias, controle dos canais de saída.
@@ -266,7 +266,7 @@ Possui também um microcontrolador para operação, leitura de sensores e comuni
 
 O sistema de harvesting consiste em três canais com conversores boost discretos e sensores de tensão e corrente, controlados individualmente pelo microcontrolador para realizar \gls{MPPT}, utilizando o algoritmo de \gls{PO}.
 
-O sistema de distribuição consiste em seis barramentos com conversores dedicados, de 3.3V, 5V ou 6V, para cada um dos módulos do satélite, que podem ser ativados ou desativados individualmente.
+O sistema de distribuição consiste em seis barramentos com conversores dedicados, de 3,3V, 5V ou 6V, para cada um dos módulos do satélite, que podem ser ativados ou desativados individualmente.
 
 O sistema de armazenamento consiste de um sistema de monitoramento (chamado \textit{Batteries Management Subsystem} na \autoref{fig:eps2-diagrama-blocos}) e de um módulo de baterias separado (chamado \textit{Batteries Daughterboard} no diagrama da \autoref{fig:eps2-diagrama-blocos}), que pode ser acoplado ao \gls{EPS2}.
 O módulo de baterias contem 4 células de baterias de íon de lítio em configuração 2s-2p, bem como sensores de temperatura e aquecedores que podem ser lidos e controlados pelo microcontrolador do \gls{EPS}.
@@ -303,7 +303,7 @@ O sistema de harvesting consiste em um barramento com dois \gls{BCR}s BQ24650, c
 O sistema de armazenamento, similarmente ao \gls{EPS2}, utilizará um módulo de baterias dedicado, atualmente em estágio inicial de desenvolvimento.
 \red{Confirmar!!}
 
-O sistema de distribuição é composto por dois barramentos regulados, de 3.3V e 5V, seis canais de saída controlados individualmente e sensores de tensão e corrente em diversos pontos.
+O sistema de distribuição é composto por dois barramentos regulados, de 3,3V e 5V, seis canais de saída controlados individualmente e sensores de tensão e corrente em diversos pontos.
 Cada barramento utiliza dois reguladores LTC3833 configurados em redundância fria e sensor de tensão à saída do regulador. Os canais de saída possui também sensores de corrente individuais para monitoramento.
 
 Os sinais de todos os sensores podem ser acessados e lidos através de um multiplexador analógico presente no \gls{EPS}.
@@ -344,7 +344,7 @@ Os resultados foram então comparados com os requisitos.
 Para proteção contra over-current é utilizado o componente MAX890L. Sua operação foi testada aplicando-se passagem de corrente ao componente de forma incremental até que o limite imposto fosse atingido.
 
 O teste de burn-in consistiu em aplicar uma alta demanda de potência ao EPS por um longo período de tempo.
-Foram aplicadas cargas de 4.5W e 2.5W aos conversores de 5V e 3.3V, respectivamente, por um período de 7 dias. Após o teste, as características da placa foram medidas e comparadas com resultados anteriores.
+Foram aplicadas cargas de 4.5W e 2.5W aos conversores de 5V e 3,3V, respectivamente, por um período de 7 dias. Após o teste, as características da placa foram medidas e comparadas com resultados anteriores.
 
 \subsection{ESTCube-1}
 

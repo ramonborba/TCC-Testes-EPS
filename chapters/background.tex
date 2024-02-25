@@ -12,8 +12,8 @@ Cada unidade é chamada "1U", ou seja, um CubeSat formado por três unidades é 
 
 Este padrão surgiu, em 1999, de um projeto colaborativo entre os professores Bob Twiggs (Stanford University) e Jordi Puig-Suari (California Polytechnic State University), chamado CubeSat Project, que tinha como objetivo promover o acesso ao ambiente espacial através da redução de custos e de tempo de desenvolvimento, possibilitando lançamentos mais frequentes \cite{cds}.
 
-Pode-se identificar um conjunto de subsistemas fundamentais presentes no design de boa parte dos 
-CubeSats. Nos trabalhos de \textcite{tailoring-ecss-nanosat},- \textcite{survey-nanosat-missions-2010} e \textcite{reliability-of-cubesats} foram identificados os seguintes principais subsistemas:
+Pode-se identificar um conjunto de subsistemas fundamentais presentes no projeto de boa parte dos 
+CubeSats. Nos trabalhos de \textcite{tailoring-ecss-nanosat},- \textcite{survey-nanosat-missions-2010} e \textcite{reliability-of-cubesats} foram identificados os seguintes subsistemas principais:
 \begin{alineas}
     \item gerenciamento de energia;
     \item gerenciamento de dados (computador de bordo);
@@ -25,7 +25,7 @@ CubeSats. Nos trabalhos de \textcite{tailoring-ecss-nanosat},- \textcite{survey-
 \end{alineas}
 
 Cada subsistema é geralmente implementado em um módulo dedicado, chamado módulo de serviço, e o conjunto destes módulos forma a plataforma de serviço do satélite, responsável por todas as funções e operações fundamentais de um CubeSat.
-De fato,  no livro de \textcite{cappelletti_2020}, são apresentados tais módulos e discutidos os principais aspectos a serem considerados para o design e implementação de cada subsistema.
+De fato,  no livro de \textcite{cappelletti_2020}, são apresentados tais módulos e discutidos os principais aspectos a serem considerados para o projeto e implementação de cada subsistema.
 
 Além da plataforma de serviço, os CubeSats também são equipados com cargas úteis, ou payloads, que são os módulos responsáveis por realizar os objetivos específicos de cada missão.
 
@@ -43,7 +43,7 @@ Ambas estas referências introduzem conceitos e requisitos relevantes à elabora
 % ==== CubeSat Design Specification ====
 \subsection{CubeSat Design Specification}
 
-O \gls{CDS} é um documento contendo as especificações e requisitos básicos e servindo como ponto de partida para o design de CubeSats de 1U a 12U, mantido pela California Polytechnic State University.
+O \gls{CDS} é um documento contendo as especificações e requisitos básicos e servindo como ponto de partida para o projeto de CubeSats de 1U a 12U, mantido pela California Polytechnic State University.
 Requisitos gerais, mecânicos, elétricos, de operação e de testes são especificados, definindo as características básicas que constituem um nano satélite da classe CubeSat.
 
 Os requisitos de testes descritos no \gls{CDS} estão focados em testes ambientais para o CubeSat como um todo, já em estagio de qualificação para o lançamento.
@@ -90,7 +90,7 @@ A seguir são apresentados estes conceitos:
 \begin{alineas}
     \item \textit{verification levels}:
     \begin{alineas}
-        \item os níveis de verificação estão relacionados à decomposição do produto final, neste caso um CubeSat. estes níveis podem varias de acordo com a complexidade do projeto.
+        \item os níveis de verificação estão relacionados à decomposição do produto final, neste caso um CubeSat. Estes níveis podem variar de acordo com a complexidade do projeto.
         \item o processo de verificação é executado em cada um dos níveis definidos para um projeto ou missão.
     \end{alineas}
 
@@ -98,8 +98,8 @@ A seguir são apresentados estes conceitos:
     \begin{alineas}
         \item o processo de verificação é feito em estágios, com objetivos específicos. os principais estágios apresentados em \textcite{ecss-e-st-10-02} são \textit{qualification}, \textit{acceptance}\red{, \textit{pre-launch}, \textit{in-orbit}, e \textit{post-landing}}.
 
-        \item o estágio de \textit{qualification} visa garantir que o design proposto para a missão é capaz de cumprir com os requisitos no ambiente esperado.
-        \item o estágio de \textit{acceptance} visa demostrar que o modelo final \red{modelo físico de vôo} está em conformidade com o design qualificado previamente
+        \item o estágio de \textit{qualification} visa garantir que o projeto proposto para a missão é capaz de cumprir com os requisitos no ambiente esperado.
+        \item o estágio de \textit{acceptance} visa demostrar que o modelo final \red{modelo físico de vôo} está em conformidade com o projeto qualificado previamente
     \end{alineas}
 
     \item \textit{model philosophy}:
@@ -110,12 +110,12 @@ A seguir são apresentados estes conceitos:
 
     \item \textit{qualification testing}:
     \begin{alineas}
-        \item testes de qualificação (chamado \textit{qualification testing} na ECSS-E-ST-10-03) tem o objetivo de verificar que o design do objeto sobre teste é capaz de satisfazer todos os seu requisitos. Estes testes são conduzidos em modelos de qualificação dedicados e com parâmetros de teste (intensidade, duração) específicos.
+        \item testes de qualificação (chamado \textit{qualification testing} na ECSS-E-ST-10-03) tem o objetivo de verificar que o projeto do objeto sobre teste é capaz de satisfazer todos os seu requisitos. Estes testes são conduzidos em modelos de qualificação dedicados e com parâmetros de teste (intensidade, duração) específicos.
     \end{alineas}
 
     \item \textit{acceptance testing}:
     \begin{alineas}
-        \item testes de aceitação (chamado \textit{acceptance testing} na ECSS-E-ST-10-03) tem o objetivo de verificar que o objeto sobre teste está em conformidade com o design que foi qualificado previamente e se encontra livre de defeitos de fabricação. Estes testes são conduzidos em todos os modelos de voo e com parâmetros de teste (intensidade, duração) específicos para \textit{acceptance testing}.
+        \item testes de aceitação (chamado \textit{acceptance testing} na ECSS-E-ST-10-03) tem o objetivo de verificar que o objeto sobre teste está em conformidade com o projeto que foi qualificado previamente e se encontra livre de defeitos de fabricação. Estes testes são conduzidos em todos os modelos de voo e com parâmetros de teste (intensidade, duração) específicos para \textit{acceptance testing}.
     \end{alineas}
 
     \item \textit{proto-flight testing}:
@@ -138,11 +138,11 @@ Neste trabalho, topologia se refere a uma visão de alto-nível dos principais b
 \subsection{Topologias}\label{sec:topologias}
 % ----------------------------------------------------------
 
-Um módulo \gls{EPS} é composto por algum elementos básicos, mostrados na \autoref{fig:diagrama-basico-eps}.
-O sistema de harvesting é responsável por extrair energia dos painéis solares, que são a fonte primaria de energia dos CubeSats.
+Um módulo \gls{EPS} é composto por alguns elementos básicos, mostrados na \autoref{fig:diagrama-basico-eps}.
+O sistema de harvesting é responsável por extrair energia dos painéis solares, que são a fonte primária de energia dos CubeSats.
 O sistema de armazenamento de energia é utilizado para alimentar o satélite em períodos de eclipse ou em situações de alta demanda de energia.
 O sistema de distribuição é responsável por entregar a energia coletada e armazenada pelo \gls{EPS} de forma adequada às cargas.
-Cargas típicas de um \gls{EPS} envolvem os demais subsistemas do satélite, desde de módulos de serviço, como \gls{OBDH} e \gls{TTC}, quanto cargas úteis que variam conforme os objetivos de cada missão.
+Cargas típicas de um \gls{EPS} envolvem os demais subsistemas do satélite, desde módulos de serviço, como \gls{OBDH} e \gls{TTC}, quanto cargas úteis que variam conforme os objetivos de cada missão.
 O barramento que interliga estes elementos, no contexto deste trabalho, será chamado de barramento principal.
 
 \begin{figure}[htp]

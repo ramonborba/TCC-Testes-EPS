@@ -167,7 +167,7 @@ Estágios de conversão refere-se à quantidade de conversões de energia realiz
 
 Em relação à localização dos conversores dos barramentos de saída, tem-se topologias centralizadas, com os conversores localizados num mesmo local ou na mesma PCB, ou distribuída, com os conversores localizados em diferentes locais ou PCB com o intuito de estarem fisicamente mais próximos às cargas.
 
-Em relação ao tipo de sistema de harvesting, que realiza a interface com os painéis solares, tem-se topologias com \gls{DET}, onde os painéis são conectados diretamente ao sistema de armazenamento e/ou aos reguladores das cargas, ou topologias com \gls{PPT}, onde os painéis são conectados à conversores dc-dc operados de forma a realizar \gls{MPPT}.
+Em relação ao tipo de sistema de harvesting, que realiza a interface com os painéis solares, tem-se topologias com \gls{DET}, onde os painéis são conectados diretamente ao sistema de armazenamento e/ou aos reguladores das cargas, ou topologias com \gls{PPT}, onde os painéis são conectados à conversores DC-DC operados de forma a realizar \gls{MPPT}.
 Adicionalmente, no estudo de \textcite{sara-review-eps}, diferenciam-se entre utilização de conversores discretos ou via circuitos integrados, e também apresenta-se a utilização de reguladores VLDO para a interface com os painéis solares.
 
 Em relação à regulação do barramento principal, tem-se topologias com barramento principal regulado, onde há um conversor regulando o mesmo para uma tensão de referência, não-regulado, onde os terminais da bateria são conectados diretamente ao barramento, ou parcialmente regulado, em que o barramento é regulado apenas durante o período iluminado da órbita.
@@ -183,7 +183,7 @@ A seguir serão analisadas as arquiteturas de diferentes modelos de \gls{EPS}, t
 %  ==== Aalto-2 EPS ====
 \subsubsection{Aalto-2 EPS}
 
-O \gls{EPS} desenvolvido para o satélite Aalto-2, descrito em \textcite{aalto-eps}, utiliza uma topologia de distribuição centralizada, conversão multi-estágio, sistema de harvesting com \gls{PPT} e barramento principal não regulado.
+O \gls{EPS} desenvolvido para o satélite Aalto-2, descrito em \textcite{aalto-eps}, utiliza uma topologia de distribuição centralizada, conversão multi estágio, sistema de harvesting com \gls{PPT} e barramento principal não regulado.
 Além disso, possui um microcontrolador MSP430 para controle e monitoramento e redundâncias em hardware para as funcionalidades principais como conversores DC-DC, reguladores de carga de bateria e \gls{MPPT}.
 
 O sistema de harvesting deste \gls{EPS} possui dois canais com CIs dedicados para a realização de \gls{MPPT}. O conjunto de painéis solares de cada eixo, X e Y, é ligado ao barramento principal através de um \gls{BCR}, neste caso o LT3652.
@@ -208,7 +208,7 @@ Para controle e monitoramento, foi utilizado o microcontrolador MSP430-F1611. Te
 %  ==== ESTCube-1 EPS ====
 \subsubsection{ESTCube-1}
 
-O \gls{EPS} desenvolvido para o satélite ESTCube-1, descrito em \textcite{estcube-eps}, utiliza uma topologia de distribuição centralizada, conversão multi-estágio, sistema de harvesting com \gls{PPT} e barramento principal não regulado.
+O \gls{EPS} desenvolvido para o satélite ESTCube-1, descrito em \textcite{estcube-eps}, utiliza uma topologia de distribuição centralizada, conversão multi estágio, sistema de harvesting com \gls{PPT} e barramento principal não regulado.
 Possui também um microcontrolador para controle e monitoramento e inclui redundâncias em hardware.
 
 O sistema de harvesting é composto por três canais de \gls{MPPT}. Cada canal utiliza um chip SPV1040 para a realizar o \gls{MPPT} de um conjunto de painéis correspondente a um dos eixos do satélite.
@@ -232,7 +232,7 @@ Este \gls{EPS} é responsável por realizar os procedimentos de inicialização 
 %  ==== MIST EPS ====
 \subsubsection{GomSpace NanoPower P31u e BP4}
 
-O NanoPower P31u \cite{p31u-datasheet} é um modelo comercial de \gls{EPS} fabricado pela empresa GomSpace. Utiliza uma topologia de distribuição centralizada, conversão multi-estágio, sistema de harvesting com \gls{PPT} e barramento principal não regulado. Possui também um microcontrolador para controle, configuração e comunicação.
+O NanoPower P31u \cite{p31u-datasheet} é um modelo comercial de \gls{EPS} fabricado pela empresa GomSpace. Utiliza uma topologia de distribuição centralizada, conversão multi estágio, sistema de harvesting com \gls{PPT} e barramento principal não regulado. Possui também um microcontrolador para controle, configuração e comunicação.
 
 O sistema de harvesting consiste de três canais com conversores para realização de \gls{MPPT}, controlados pelo microcontrolador.
 
@@ -271,10 +271,10 @@ O sistema de distribuição consiste em seis barramentos com conversores dedicad
 O sistema de armazenamento consiste de um sistema de monitoramento (chamado \textit{Batteries Management Subsystem} na \autoref{fig:eps2-diagrama-blocos}) e de um módulo de baterias separado (chamado \textit{Batteries Daughterboard} no diagrama da \autoref{fig:eps2-diagrama-blocos}), que pode ser acoplado ao \gls{EPS2}.
 O módulo de baterias contem 4 células de baterias de íon de lítio em configuração 2s-2p, bem como sensores de temperatura e aquecedores que podem ser lidos e controlados pelo microcontrolador do \gls{EPS}.
 O sistema de monitoramento é realizado pelo CI DS2777G+, que realiza leituras de tensão e corrente das baterias, proteção contra over-charge e over-discharge, estimativas de vida útil e monitoramento do estado de carga das baterias.
-Os sensores de temperatura são lidos por um conversor AD dedicado ADS1248 e utilizados para controle dos aquecedores de bateria, os driver para acionamento dos aquecedores, assim como o conversor AD,ficam no próprio \gls{EPS} e são controlados pelo microcontrolador.
+Os sensores de temperatura são lidos por um conversor AD dedicado ADS1248 e utilizados para controle dos aquecedores de bateria, os drivers para acionamento dos aquecedores, assim como o conversor AD, ficam no próprio \gls{EPS} e são controlados pelo microcontrolador.
 
 O microcontrolador utilizado é um MSP430F6659 de 16 bits e de baixo consumo.
-Suas principais funções são: leitura de sensores, comunicação com os demais módulos, monitoramento das baterias, controle dos aquecedores de bateria e execução do algoritmo para\gls{MPPT}.
+Suas principais funções são: leitura de sensores, comunicação com os demais módulos, monitoramento das baterias, controle dos aquecedores de bateria e execução do algoritmo para \gls{MPPT}.
 
 
 %  ==== REEPS ====
@@ -301,7 +301,6 @@ Possui redundâncias em hardware nos principais subsistemas e não utiliza micro
 O sistema de harvesting consiste em um barramento com dois \gls{BCR}s BQ24650, configurados em redundância fria, para realização de \gls{MPPT} e sensores de corrente e tensão na entrada e saída dos reguladores.
 
 O sistema de armazenamento, similarmente ao \gls{EPS2}, utilizará um módulo de baterias dedicado, atualmente em estágio inicial de desenvolvimento.
-\red{Confirmar!!}
 
 O sistema de distribuição é composto por dois barramentos regulados, de 3,3V e 5V, seis canais de saída controlados individualmente e sensores de tensão e corrente em diversos pontos.
 Cada barramento utiliza dois reguladores LTC3833 configurados em redundância fria e sensor de tensão à saída do regulador. Os canais de saída possui também sensores de corrente individuais para monitoramento.
@@ -344,7 +343,7 @@ Os resultados foram então comparados com os requisitos.
 Para proteção contra over-current é utilizado o componente MAX890L. Sua operação foi testada aplicando-se passagem de corrente ao componente de forma incremental até que o limite imposto fosse atingido.
 
 O teste de burn-in consistiu em aplicar uma alta demanda de potência ao EPS por um longo período de tempo.
-Foram aplicadas cargas de 4.5W e 2.5W aos conversores de 5V e 3,3V, respectivamente, por um período de 7 dias. Após o teste, as características da placa foram medidas e comparadas com resultados anteriores.
+Foram aplicadas cargas de 4,5W e 2,5W aos conversores de 5V e 3,3V, respectivamente, por um período de 7 dias. Após o teste, as características da placa foram medidas e comparadas com resultados anteriores.
 
 \subsection{ESTCube-1}
 

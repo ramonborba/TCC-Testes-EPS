@@ -32,7 +32,7 @@ De fato,  no livro de \textcite{cappelletti_2020}, são apresentados tais módul
 Além da plataforma de serviço, os CubeSats também são equipados com cargas úteis, ou payloads, que são os módulos responsáveis por realizar os objetivos específicos de cada missão.
 
 % ----------------------------------------------------------
-\section{Normas e Padrões de Testes}\label{sec:normas-ecss}
+\section{Normas e Padrões de Testes}\label{sec:normas}
 % ----------------------------------------------------------
 % TODO: Pensar num nome melhor para esta parte
 
@@ -76,7 +76,7 @@ Os principais testes indicados pelo \gls{CDS} são:
 
 
 % ==== European Cooperation For Space Standardization ====
-\subsection{European Cooperation for Space Standardization}
+\subsection{European Cooperation for Space Standardization} \label{sec:normas-ecss}
 
 A European Cooperation for Space Standardization, ou \gls{ECSS}, é uma colaboração entre a \gls{ESA}, a indústria espacial europeia e diversas outras agências espaciais, responsável por desenvolver e manter um conjunto de normas e padrões relacionados a atividades espaciais. Essas normas e padrões cobrem diversas disciplinas, como gerenciamento, engenharia, controle de qualidade e sustentabilidade.
 
@@ -87,6 +87,9 @@ Para cada caso, é feito um processo de \textit{tailoring}, selecionando-se as c
 Como complemento às normas ECSS-E-ST-10-02 e ECSS-E-ST-10-03, tem-se também o documento ECSS-S-ST-00-01 \cite{ecss-s-st-00-01}, um glossário onde diversos termos e definições utilizados nas demais normas são apresentados.
 Vale ressaltar também que estes documentos não são específicos para nanossatélites, mas foram pensados para satélites de médio e grande porte, onde se necessita uma rigorosidade extrema nos processos de \gls{AIV}.
 Portanto deve-se levar em consideração o cenário de uma missão de CubeSat e fazer as adaptações necessárias ao se aplicar estas normas, especialmente em uma missão universitária, visando simplicidade, baixo custo e rápido desenvolvimento.
+
+A própria \gls{ESA} possui um documento contento o \textit{tailoring} destas e outras normas para projetos de CubeSats para missões de demonstração em órbita, mostrado em \textcite{tailored-ecss}, fazendo as adaptações necessárias pra esta aplicação.
+Foram consideradas as características de um projeto de CubeSat para esta aplicação, como baixo custo, menor complexidade (em relação à grandes satélites) e rápido desenvolvimento, maior aceitação para riscos e pontos únicos de falha. Porém, diferentemente da proposta deste trabalho, foram aplicadas as normas a nível de satélite e assumido o uso extensivo de modelos comerciais dos módulos de serviço, já com herança de voo.
 
 De acordo com as normas citadas acima, testes são considerados como um dos métodos utilizados para o processo de verificação.
 Com isso, apesar deste trabalho ser focado em testes, alguns conceitos relacionados ao processo de verificação, introduzidos em \textcite{ecss-e-st-10-02}, como \textit{verification levels}, \textit{verification stages} e \textit{model philosophy}, influenciam diretamente nos objetivos e na elaboração do plano de testes.
@@ -201,6 +204,17 @@ A seguir serão analisadas as arquiteturas de diferentes modelos de \gls{EPS}, t
 
 O \gls{EPS} desenvolvido para o satélite Aalto-2, descrito em \textcite{aalto-eps}, utiliza uma topologia de distribuição centralizada, conversão multi estágio, sistema de harvesting com \gls{PPT} e barramento principal não regulado.
 Além disso, possui um microcontrolador MSP430 para controle e monitoramento e redundâncias em hardware para as funcionalidades principais como conversores DC-DC, reguladores de carga de bateria e \gls{MPPT}.
+A \autoref{fig:diagrama-aalto2} mostra o diagrama de blocos deste módulo.
+
+\begin{figure}[htp]
+    \caption{Diagrama de blocos do EPS do satélite Aalto-2.}
+    \begin{center}
+        \includegraphics[width=\textwidth, keepaspectratio]{images/aalto2-block-diagram.png}
+    \end{center}
+    \fonte{\textcite{aalto-eps}.}
+    \label{fig:diagrama-aalto2}
+\end{figure}
+
 
 O sistema de harvesting deste \gls{EPS} possui dois canais, cada um com um \gls{CI} dedicado para a realização de \gls{MPPT}. O conjunto de painéis solares de cada eixo, X e Y, é ligado ao barramento principal através de um \gls{BCR}, neste caso o LT3652.
 
@@ -226,6 +240,16 @@ Para controle e monitoramento, foi utilizado o microcontrolador MSP430-F1611. Te
 
 O \gls{EPS} desenvolvido para o satélite ESTCube-1, descrito em \textcite{estcube-eps}, utiliza uma topologia de distribuição centralizada, conversão multi estágio, sistema de harvesting com \gls{PPT} e barramento principal não regulado.
 Possui também um microcontrolador para controle e monitoramento e inclui redundâncias em hardware.
+A \autoref{fig:diagrama-estcube1} mostra o diagrama de blocos deste módulo.
+
+\begin{figure}[htp]
+    \caption{Diagrama de blocos do EPS do satélite ESTCube-1.}
+    \begin{center}
+        \includegraphics[width=\textwidth, keepaspectratio]{images/estcube1-block-diagram.png}
+    \end{center}
+    \fonte{\textcite{estcube-eps}.}
+    \label{fig:diagrama-estcube1}
+\end{figure}
 
 O sistema de harvesting é composto por três canais de \gls{MPPT}. Cada canal utiliza um chip SPV1040 para a realizar o \gls{MPPT} de um conjunto de painéis correspondente a um dos eixos do satélite.
 
@@ -249,6 +273,16 @@ Este \gls{EPS} é responsável por realizar os procedimentos de inicialização 
 \subsubsection{GomSpace NanoPower P31u e BP4}
 
 O NanoPower P31u \cite{p31u-datasheet} é um modelo comercial de \gls{EPS} fabricado pela empresa GomSpace. Utiliza uma topologia de distribuição centralizada, conversão multi estágio, sistema de harvesting com \gls{PPT} e barramento principal não regulado. Possui também um microcontrolador para controle, configuração e comunicação.
+A \autoref{fig:diagrama-p31u} mostra o diagrama de blocos deste módulo.
+
+\begin{figure}[htp]
+    \caption{Diagrama de blocos do EPS NanoPower P31u.}
+    \begin{center}
+        \includegraphics[width=\textwidth, keepaspectratio]{images/p31u-block-diagram.png}
+    \end{center}
+    \fonte{\textcite{p31u-datasheet}.}
+    \label{fig:diagrama-p31u}
+\end{figure}
 
 O sistema de harvesting consiste de três canais com conversores para realização de \gls{MPPT}, controlados pelo microcontrolador.
 
@@ -333,7 +367,41 @@ Os sinais de todos os sensores podem ser acessados e lidos através de um multip
 \section{Campanhas de teste de EPS}\label{sec:testes-epss}
 % ----------------------------------------------------------
 
-Além da arquitetura dos módulos, alguns dos trabalhos analisados apresentaram também os testes realizados em seus \gls{EPS}s, que serão apresentados a seguir.
+Além da arquitetura dos módulos, alguns dos trabalhos analisados apresentaram também os testes realizados em seus \gls{EPS}s, a \autoref{tab:testes-eps} mostra uma visão geral dos tipos de testes executados.
+
+\begin{table}[ht!]
+    \ABNTEXfontereduzida
+    \centering
+    \caption{Tipos de testes executados em campanha de testes de EPSs}
+    \begin{tabular}{ccccccc}
+        \toprule
+        \multirow{2}{*}{\textbf{EPS}} & \multicolumn{6}{c}{\textbf{Testes}} \\
+        \cline{2-7}
+        & \textbf{Inspeções} & \textbf{Funcionais} & \textbf{Eficiência} & \textbf{Missão} & \textbf{Estresse} & \textbf{Ambiente} \\
+        \midrule
+        \midrule
+        Aalto-2   & - & X & X & - & - & - \\
+        ESTCube-1 & - & X & X & - & X & X \\
+        MIST      & - & X & X & X & - & - \\
+        EPS 2.0   & X & X & - & - & - & - \\
+        \bottomrule
+    \end{tabular}
+    \fonte{Elaborada pelo autor.}
+    \label{tab:testes-eps}
+\end{table}
+
+
+Aqui, inspeções referem-se principalmente em inspecionar visualmente as condições de fabricação e transporte dos módulos, físicos utilizados.
+Testes de ambiente referem-se aos testes de vibração, termo vácuo, choque mecânico, entre outros, ou seja, testes relacionados às condições do ambiente espacial e do lançamento.
+Testes de estresse referem-se a submeter os componentes aos seus limites máximos e também testes como o burn-in.
+Os testes de eficiência referem-se principalmente à eficiência dos diversos conversores presentes nos módulos.
+Testes classificados como funcionais envolvem teste dos conversores com as cargas esperadas, testes de comunicação, leitura de sensores, funções do microcontrolador, funcionamento de algoritmos, entre outros.
+Testes de missão envolvem a simulação de cenários esperados durante a execução da missão.
+
+Como pode ser visto, dentre os módulos analisado, um grande foco é dado para testes funcionais, principalmente para o funcionamento dos conversores e circuitos de proteção, porém, apenas no EPS 2.0 foram relatados testes funcionais além destes.
+Nota-se também que em nenhuma campanha foram realizados testes de todos os tipos listados.
+
+Nas seções a seguir são apresentadas as campanhas de teste analisadas de forma mais detalhada.
 
 \subsection{Aalto-2}
 

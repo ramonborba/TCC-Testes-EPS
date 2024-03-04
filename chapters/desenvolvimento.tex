@@ -339,43 +339,45 @@ Como base para os testes de performance e de missão, convém analisar-se as cam
 Na \autoref{tab:testes-eps}, tem-se uma visão geral dos principais tipos de testes executados nos módulos em cada campanha de testes apresentada.
 Uma descrição mais detalhada sobre os testes em cada módulo encontra-se na seção mencionada acima.
 
-\begin{table}[ht!]
-    \ABNTEXfontereduzida
-    \centering
-    \caption{Tipos de testes executados em campanha de testes de EPSs}
-    \begin{tabular}{ccccccc}
-        \toprule
-        \multirow{2}{*}{\textbf{EPS}} & \multicolumn{6}{c}{\textbf{Testes}} \\
-        \cline{2-7}
-        & \textbf{Inspeções} & \textbf{Funcionais} & \textbf{Eficiência} & \textbf{Missão} & \textbf{Estresse} & \textbf{Ambiente} \\
-        \midrule
-        \midrule
-        Aalto-2   & - & X & X & - & - & - \\
-        ESTCube-1 & - & X & X & - & X & X \\
-        MIST      & - & X & X & X & - & - \\
-        EPS 2.0   & X & X & - & - & - & - \\
-        \bottomrule
-    \end{tabular}
-    \fonte{Elaborada pelo autor.}
-    \label{tab:testes-eps}
-\end{table}
+% \begin{table}[ht!]
+%     \ABNTEXfontereduzida
+%     \centering
+%     \caption{Tipos de testes executados em campanha de testes de EPSs}
+%     \begin{tabular}{ccccccc}
+%         \toprule
+%         \multirow{2}{*}{\textbf{EPS}} & \multicolumn{6}{c}{\textbf{Testes}} \\
+%         \cline{2-7}
+%         & \textbf{Inspeções} & \textbf{Funcionais} & \textbf{Eficiência} & \textbf{Missão} & \textbf{Estresse} & \textbf{Ambiente} \\
+%         \midrule
+%         \midrule
+%         Aalto-2   & - & X & X & - & - & - \\
+%         ESTCube-1 & - & X & X & - & X & X \\
+%         MIST      & - & X & X & X & - & - \\
+%         EPS 2.0   & X & X & - & - & - & - \\
+%         \bottomrule
+%     \end{tabular}
+%     \fonte{Elaborada pelo autor.}
+%     \label{tab:testes-eps}
+% \end{table}
 
 
-Aqui, inspeções referem-se principalmente em inspecionar visualmente as condições de fabricação e transporte dos módulos, físicos utilizados.
-Testes de ambiente referem-se aos testes de vibração, termo vácuo, choque mecânico, entre outros, ou seja, testes relacionados às condições do ambiente espacial e do lançamento.
-Testes de estresse referem-se a submeter os componentes aos seus limites máximos e também testes como o burn-in.
-Os testes de eficiência referem-se principalmente à eficiência dos diversos conversores presentes nos módulos.
+% Aqui, inspeções referem-se principalmente em inspecionar visualmente as condições de fabricação e transporte dos módulos, físicos utilizados.
+% Testes de ambiente referem-se aos testes de vibração, termo vácuo, choque mecânico, entre outros, ou seja, testes relacionados às condições do ambiente espacial e do lançamento.
+% Testes de estresse referem-se a submeter os componentes aos seus limites máximos e também testes como o burn-in.
+% Os testes de eficiência referem-se principalmente à eficiência dos diversos conversores presentes nos módulos.
 
-Testes classificados como funcionais envolvem teste dos conversores com as cargas esperadas, testes de comunicação, leitura de sensores, funções do microcontrolador, funcionamento de algoritmos, entre outros.
+% Testes classificados como funcionais envolvem teste dos conversores com as cargas esperadas, testes de comunicação, leitura de sensores, funções do microcontrolador, funcionamento de algoritmos, entre outros.
 
-Como pode ser visto, dentre os módulos analisado, um grande foco é dado para testes funcionais, principalmente para o funcionamento dos conversores e circuitos de proteção, porém, apenas no EPS 2.0 foram relatados testes funcionais além destes.
-Nota-se também que em nenhuma campanha foram realizados testes de todos os tipos listados.
+% Como pode ser visto, dentre os módulos analisado, um grande foco é dado para testes funcionais, principalmente para o funcionamento dos conversores e circuitos de proteção, porém, apenas no EPS 2.0 foram relatados testes funcionais além destes.
+% Nota-se também que em nenhuma campanha foram realizados testes de todos os tipos listados.
 
-Os testes de eficiência dos conversores são o principal interesse relacionado à performance nos \gls{EPS}s.
+Nota-se que os testes de eficiência dos conversores são o principal interesse relacionado à performance nos \gls{EPS}s.
 Em alguns casos, tem-se inclusive requisitos específicos relacionados à eficiência, como em \textcite{aalto-eps} em que foi dado um grande foco em testes de eficiência de conversores.
+O consumo de potência do módulo também pode ser considerado um parâmetro relacionado à performance, e pode ter requisitos associados, além de ser um dado importante para análises de \textit{power-budget} das missões.
 
 Em relação aos testes de missão, apenas em \textcite{mist-eps} foram relatados simulações de diferentes cenários esperados.
 Neste caso, foram simulados o funcionamento das diferente cargas úteis do satélite, em termos de tempo de acionamento e consumo, conforme a operação planejada e em diferentes cenários.
+Este tipo de teste é bastante específico para cada projeto, tendo um forte dependência de diversos fatores e características de cada missão, como conceito de operações e cargas úteis utilizadas por exemplo. Isto torna inviável a proposta de testes desta categoria de forma abrangente.
 
 
 % ----------------------------------------------------------

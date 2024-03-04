@@ -2,12 +2,13 @@
 \chapter{Introdução}\label{cap:intro}
 % ----------------------------------------------------------
 
-Desde a criação do padrão CubeSat em 1999, nanossatélites tem sido utilizados em cada vez mais aplicações. Popularizado inicialmente no meio acadêmico, possibilitando à universidades o desenvolvimento de missões espaciais de baixo custo, atualmente estes satélites são utilizados para diversas aplicações \cite{modern-small-sats-economics}.
+Desde a criação do padrão CubeSat em 1999, nanossatélites tem sido utilizados em cada vez mais aplicações. Popularizado inicialmente no meio acadêmico, possibilitando à universidades o desenvolvimento de missões espaciais de baixo custo, atualmente estes satélites são utilizados para diversas aplicações, como mostrado em \textcite{modern-small-sats-economics}.
 
 Inicialmente os CubeSats serviam um propósito didático, com aplicações de demonstração de tecnologia, experimentos científicos.
-Porém, recentemente, aplicações comerciais de nanossatélites e CubeSats tem ganhado espaço, tanto que em 2014 o numero de lançamentos de nanossatélites com propósito comercial ultrapassou os de propósito acadêmico \cite{modern-small-sats-economics}.
+Porém, recentemente, aplicações comerciais de nanossatélites e CubeSats tem ganhado espaço, relata \textcite{modern-small-sats-economics} tanto que em 2014 o numero de lançamentos de nanossatélites com propósito comercial ultrapassou os de propósito acadêmico.
 
-Com o advento de conceitos como “\textit{New Space}” e a percepção de sua utilidade comercial, os CubeSats estão entrando no radar de grandes empresas \cite{modern-small-sats-economics}, inclusive sendo utilizados em missões espaciais de grandes instituições como a NASA no programa Artemis, que utilizará de CubeSats em sua missão com o objetivo de explorar a lua \cite{artemis-plan}.
+Com o advento de conceitos como “\textit{New Space}” e a percepção de sua utilidade comercial, os pequenos satélites estão entrando no radar de grandes empresas, com SpaceX e Boeing, planejando a utilização de grandes constelações, conforme observado por \textcite{modern-small-sats-economics}.
+Inclusive, CubeSats vem sendo utilizados em pesquisas e missões espaciais de alto nível, com grandes instituições como a NASA em seu programa Artemis, mostrado em \textcite{artemis-plan}, que utilizará de CubeSats em sua missão com o objetivo de explorar a lua.
 
 % ----------------------------------------------------------
 \section{Falhas em CubeSats}\label{sec:intro-falhas}
@@ -27,9 +28,19 @@ No trabalho de \textcite{reliability-of-cubesats}, que analisou a causa de falha
 Para satélites de propósito educacional, de demonstração tecnológica, essa baixa confiabilidade é tolerável, visto que parte do objetivo destas missões inclui proporcionar experiência e capacitação para estudantes.
 Porém, é inaceitável para aplicações comerciais \cite{overview-nanosat-test}.
 
-Esta taxa de falha, no entanto, vem diminuindo desde então, com com uma taxa de apenas 10\% de falhas em lançamentos em 2018 \cite{aiv-istsat-1}.
+Esta taxa de falha, no entanto, vem diminuindo desde então, com com uma taxa de apenas 10\% de falhas em lançamentos em 2018 segundo \textcite{aiv-istsat-1}. Conforme a base de dados de nanossatélites Nanosats Database, de \textcite{nanosats-database}, observando a situação dos nanossatélites lançados até dezembro de 2023, mostrados na \autoref{fig:status-nanosats}, tem-se aproximadamente 5\% dos satélites com falhas no lançamento. Ainda, satélites não-operacionais constituem apenas 21\%, aproximadamente, considerando-se os satélites classificados em operacionais ou não-operacionais.
 O aumento no número de aplicações comerciais, desenvolvidas por equipes mais experientes e com mais recursos, é um dos fatores que tem contribuído para essa mudança.
 Outro fator importante, como relatado em \textcite{aiv-istsat-1}, missões acadêmicas tem dado maior atenção aos processos de \gls{AIV}.
+
+\begin{figure}[htp]
+    \caption{Estado atual dos nanossatélites lançados (dezembro de 2023).}
+    \begin{center}
+        \includegraphics[width=\textwidth, keepaspectratio]{images/Nanosats_status_2023-12-31_large.png}
+    \end{center}
+    \fonte{\textcite{nanosats-database}.}
+    \label{fig:status-nanosats}
+\end{figure}
+
 
 Nota-se também que, em missões de CubeSats mais recentes, foram adotados procedimentos e padrões mais rigorosos, não só em relação à testes, mas em todo o processo de engenharia de sistemas e gerenciamento da missão.
 Trabalhos como \textcite{floripasat-1} e \textcite{tailoring-ecss-nanosat}, por exemplo, tomaram como referência os padrões determinados pela \gls{ECSS}, utilizados pela \gls{ESA} e diversas outras agências espaciais da Europa.

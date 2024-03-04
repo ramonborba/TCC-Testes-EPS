@@ -6,14 +6,15 @@
 \section{O Padrão CubeSat}\label{sec:cubesats}
 % ----------------------------------------------------------
 
-Os CubeSats são nano satélites padronizados, com critérios de tamanho, forma e peso específicos.
-Satélites neste padrão são compostos por uma ou mais unidades em formato cúbico, com aresta de \(10cm\) e massa de até \(2kg\) \cite{cds}.
+Os CubeSats são nanossatélites padronizados, com critérios de tamanho, forma e peso específicos.
+Satélites neste padrão são compostos por uma ou mais unidades em formato cúbico, com aresta de \(10cm\) e massa de até \(2kg\), conforme \textcite{cds}.
 Cada unidade é chamada "1U", ou seja, um CubeSat formado por três unidades é categorizado com um CubeSat 3U.
 
-Este padrão surgiu, em 1999, de um projeto colaborativo entre os professores Bob Twiggs (Stanford University) e Jordi Puig-Suari (California Polytechnic State University), chamado CubeSat Project, que tinha como objetivo promover o acesso ao ambiente espacial através da redução de custos e de tempo de desenvolvimento, possibilitando lançamentos mais frequentes \cite{cds}.
+Este padrão surgiu, em 1999, de um projeto colaborativo entre os professores Bob Twiggs (Stanford University) e Jordi Puig-Suari (California Polytechnic State University), chamado CubeSat Project, que tinha como objetivo promover o acesso ao ambiente espacial através da redução de custos e de tempo de desenvolvimento, possibilitando lançamentos mais frequentes.
 
 Pode-se identificar um conjunto de subsistemas fundamentais presentes no projeto de boa parte dos 
 CubeSats. Nos trabalhos de \textcite{tailoring-ecss-nanosat},- \textcite{survey-nanosat-missions-2010} e \textcite{reliability-of-cubesats} foram identificados os seguintes subsistemas principais:
+
 \begin{alineas}
     \item gerenciamento de energia;
     \item gerenciamento de dados (computador de bordo);
@@ -23,6 +24,7 @@ CubeSats. Nos trabalhos de \textcite{tailoring-ecss-nanosat},- \textcite{survey-
     \item controle térmico;
     \item propulsão.
 \end{alineas}
+\vspace{3mm}
 
 Cada subsistema é geralmente implementado em um módulo dedicado, chamado módulo de serviço, e o conjunto destes módulos forma a plataforma de serviço do satélite, responsável por todas as funções e operações fundamentais de um CubeSat.
 De fato,  no livro de \textcite{cappelletti_2020}, são apresentados tais módulos e discutidos os principais aspectos a serem considerados para o projeto e implementação de cada subsistema.
@@ -44,10 +46,20 @@ Ambas estas referências introduzem conceitos e requisitos relevantes à elabora
 \subsection{CubeSat Design Specification}
 
 O \gls{CDS} é um documento contendo as especificações e requisitos básicos e servindo como ponto de partida para o projeto de CubeSats de 1U a 12U, mantido pela California Polytechnic State University.
-Requisitos gerais, mecânicos, elétricos, de operação e de testes são especificados, definindo as características básicas que constituem um nano satélite da classe CubeSat.
+Requisitos gerais, mecânicos, elétricos, de operação e de testes são especificados, definindo as características básicas que constituem um nanossatélite da classe CubeSat.
 
 Os requisitos de testes descritos no \gls{CDS} estão focados em testes ambientais para o CubeSat como um todo, já em estagio de qualificação para o lançamento.
 Como filosofia de testes, o \gls{CDS} propõe as seguintes etapas: \textit{qualification}, \textit{acceptance} e \textit{proto-flight}, executadas conforme o diagrama mostrado na \autoref{fig:test-flow-cds}.
+Os principais testes indicados pelo \gls{CDS} são:
+
+\vspace{1mm}
+\begin{alineas}
+    \item Testes de vibração;
+    \item Termo vácuo e bakeout;
+    \item Testes de choque;
+    \item Inspeção visual;
+\end{alineas}
+\vspace{3mm}
 
 % Fluxograma de testes do CDS
 \begin{figure}[htp]
@@ -59,13 +71,6 @@ Como filosofia de testes, o \gls{CDS} propõe as seguintes etapas: \textit{quali
     \label{fig:test-flow-cds}
 \end{figure}
 
-Os principais testes indicados pelo \gls{CDS} são:
-\begin{alineas}
-    \item Testes de vibração;
-    \item Termo vácuo e bakeout;
-    \item Testes de choque;
-    \item Inspeção visual;
-\end{alineas}
 
 É importante ressaltar que estes requisitos de teste, bem como os parâmetros (intensidade, duração, etc...) de cada teste para cada etapa, como enfatizado no próprio documento, são apenas preliminares e servem somente como base. Os requisitos de teste oficiais para lançamento serão gerados pelo provedor do lançamento, e sempre tomarão precedência em relação aos requisitos do \gls{CDS} ou a qualquer outro conjunto de requisitos.
 
@@ -75,18 +80,22 @@ Os principais testes indicados pelo \gls{CDS} são:
 
 A European Cooperation for Space Standardization, ou \gls{ECSS}, é uma colaboração entre a \gls{ESA}, a indústria espacial europeia e diversas outras agências espaciais, responsável por desenvolver e manter um conjunto de normas e padrões relacionados a atividades espaciais. Essas normas e padrões cobrem diversas disciplinas, como gerenciamento, engenharia, controle de qualidade e sustentabilidade.
 
-Dentro do ramo de engenharia, tem-se os documentos ECSS-E-ST-10-02 \cite{ecss-e-st-10-02}, ECSS-E-HB-10-02 \cite{ecss-e-hb-10-02}, ECSS-E-ST-10-03 \cite{ecss-e-st-10-03} e ECSS-E-HB-10-03 \cite{ecss-e-hb-10-03}, que determinam requisitos para os processos de verificação e testes. Estes documentos são redigidos de forma abrangente, com o objetivo de que, a partir de um processo de tailoring, possa-se aplicar estas normas e padrões em diversos níveis, tanto ao satélite completo quanto a um módulo isoladamente.
+Dentro do ramo de engenharia, tem-se os documentos ECSS-E-ST-10-02 \cite{ecss-e-st-10-02}, ECSS-E-HB-10-02 \cite{ecss-e-hb-10-02}, ECSS-E-ST-10-03 \cite{ecss-e-st-10-03} e ECSS-E-HB-10-03 \cite{ecss-e-hb-10-03}, que determinam requisitos para os processos de verificação e testes.
+% Estes documentos são redigidos de forma abrangente, com o objetivo de que, a partir de um processo de tailoring, possa-se aplicar estas normas e padrões em diversos níveis, tanto ao satélite completo quanto a um módulo isoladamente.
+Estes documentos são redigidos de forma abrangente, podendo assim serem aplicados tanto ao satélite completo, quanto a um módulo isoladamente, e em diferentes fases do projeto.
+Para cada caso, é feito um processo de \textit{tailoring}, selecionando-se as clausulas aplicáveis das normas para o determinado cenário.
 Como complemento às normas ECSS-E-ST-10-02 e ECSS-E-ST-10-03, tem-se também o documento ECSS-S-ST-00-01 \cite{ecss-s-st-00-01}, um glossário onde diversos termos e definições utilizados nas demais normas são apresentados.
-Vale ressaltar também que estes documentos não são específicos para nano satélites, mas foram pensados para satélites de médio e grande porte, onde se necessita uma rigorosidade extrema nos processos de \gls{AIV}.
+Vale ressaltar também que estes documentos não são específicos para nanossatélites, mas foram pensados para satélites de médio e grande porte, onde se necessita uma rigorosidade extrema nos processos de \gls{AIV}.
 Portanto deve-se levar em consideração o cenário de uma missão de CubeSat e fazer as adaptações necessárias ao se aplicar estas normas, especialmente em uma missão universitária, visando simplicidade, baixo custo e rápido desenvolvimento.
 
 De acordo com as normas citadas acima, testes são considerados como um dos métodos utilizados para o processo de verificação.
-Com isso, apesar deste trabalho ser focado em testes, alguns conceitos relacionados ao processo de verificação, introduzidos em \cite{ecss-e-st-10-02}, como \textit{verification levels}, \textit{verification stages} e \textit{model philosophy}, influenciam diretamente nos objetivos e na elaboração do plano de testes.
+Com isso, apesar deste trabalho ser focado em testes, alguns conceitos relacionados ao processo de verificação, introduzidos em \textcite{ecss-e-st-10-02}, como \textit{verification levels}, \textit{verification stages} e \textit{model philosophy}, influenciam diretamente nos objetivos e na elaboração do plano de testes.
 
 Similarmente à filosofia de testes apresentada pelo \gls{CDS}, em \textcite{ecss-e-st-10-03} tem-se os conceitos de \textit{qualification testing}, \textit{acceptance testing} e \textit{proto-flight testing}, que determinam os objetivos do plano de testes.
 
 A seguir são apresentados estes conceitos:
 
+\vspace{1mm}
 \begin{alineas}
     \item \textit{verification levels}:
     \begin{alineas}
@@ -96,16 +105,16 @@ A seguir são apresentados estes conceitos:
 
     \item \textit{verification stages}:
     \begin{alineas}
-        \item o processo de verificação é feito em estágios, com objetivos específicos. os principais estágios apresentados em \textcite{ecss-e-st-10-02} são \textit{qualification}, \textit{acceptance}\red{, \textit{pre-launch}, \textit{in-orbit}, e \textit{post-landing}}.
+        \item o processo de verificação é feito em estágios, com objetivos específicos. os principais estágios apresentados em \textcite{ecss-e-st-10-02} são \textit{qualification}, \textit{acceptance}, \textit{pre-launch}, \textit{in-orbit}, e \textit{post-landing}.
 
         \item o estágio de \textit{qualification} visa garantir que o projeto proposto para a missão é capaz de cumprir com os requisitos no ambiente esperado.
-        \item o estágio de \textit{acceptance} visa demostrar que o modelo final \red{modelo físico de vôo} está em conformidade com o projeto qualificado previamente
+        \item o estágio de \textit{acceptance} visa demostrar que o modelo de voo está em conformidade com o projeto qualificado previamente
     \end{alineas}
 
     \item \textit{model philosophy}:
     \begin{alineas}
         \item o conceito de \textit{model philosophy} está relacionado ao tipo e quantidade de modelos físicos utilizados durante o desenvolvimento, verificação e testes.
-        \item em \cite{ecss-e-hb-10-02}, diversos tipos de modelos são apresentados e descritos. considerando uma missão de CubeSat, os principais modelos aplicáveis são: modelo de engenharia, modelo de qualificação, modelo de proto-flight e modelo de voo.
+        \item em \textcite{ecss-e-hb-10-02}, diversos tipos de modelos são apresentados e descritos. considerando uma missão de CubeSat, os principais modelos aplicáveis são: modelo de engenharia, modelo de qualificação, modelo de proto-flight e modelo de voo.
     \end{alineas}
 
     \item \textit{qualification testing}:
@@ -146,7 +155,7 @@ Cargas típicas de um \gls{EPS} envolvem os demais subsistemas do satélite, des
 O barramento que interliga estes elementos, no contexto deste trabalho, será chamado de barramento principal.
 
 \begin{figure}[htp]
-    \caption{Diagrama de blocos básico de um \gls{EPS}}
+    \caption{Diagrama de blocos básico de um EPS}
     \begin{center}
         \includegraphics[width=\textwidth, keepaspectratio]{images/basic-eps-block-diagram.png}
     \end{center}
@@ -156,19 +165,26 @@ O barramento que interliga estes elementos, no contexto deste trabalho, será ch
 
 
 O estudo de \textcite{comprehensive-review-eps} mostra uma revisão de diferentes topologias de \gls{EPS} utilizados em diversas missões e propõe uma forma de classificá-los de acordo com quatro aspectos principais em comum nas diversas topologias:
+
+\vspace{1mm}
 \begin{alineas}
     \item Estágios de conversão;
     \item Tipo de distribuição; % Localização dos conversores dos barramentos de saída
     \item Tipo de sistema de harvesting;% Sistema de harvesting
     \item Regulação do barramento principal;% Nome melhor para este barramento
 \end{alineas}
+\vspace{3mm}
 
-Estágios de conversão refere-se à quantidade de conversões de energia realizadas até que a energia dos painéis ou baterias seja entregue às cargas. Até o momento, encontram-se em publicações ou patentes apenas topologias com múltiplos estágios de conversão para \gls{EPS}s de CubeSats \cite{comprehensive-review-eps}.
+Estágios de conversão refere-se à quantidade de conversões de energia realizadas até que a energia dos painéis ou baterias seja entregue às cargas. Até o momento, conforme \textcite{comprehensive-review-eps} encontram-se em publicações ou patentes apenas topologias com múltiplos estágios de conversão para \gls{EPS}s de CubeSats.
 
-Em relação à localização dos conversores dos barramentos de saída, tem-se topologias centralizadas, com os conversores localizados num mesmo local ou na mesma PCB, ou distribuída, com os conversores localizados em diferentes locais ou PCB com o intuito de estarem fisicamente mais próximos às cargas.
+Em relação à localização dos conversores dos barramentos de saída, tem-se duas topologias predominantes.
+As centralizadas, com os conversores localizados num mesmo local ou na mesma PCB.
+Ou as distribuídas, com os conversores localizados em diferentes locais ou PCB com o intuito de estarem fisicamente mais próximos às cargas.
 
-Em relação ao tipo de sistema de harvesting, que realiza a interface com os painéis solares, tem-se topologias com \gls{DET}, onde os painéis são conectados diretamente ao sistema de armazenamento e/ou aos reguladores das cargas, ou topologias com \gls{PPT}, onde os painéis são conectados à conversores DC-DC operados de forma a realizar \gls{MPPT}.
-Adicionalmente, no estudo de \textcite{sara-review-eps}, diferenciam-se entre utilização de conversores discretos ou via circuitos integrados, e também apresenta-se a utilização de reguladores VLDO para a interface com os painéis solares.
+Em relação ao tipo de sistema de harvesting, que realiza a interface com os painéis solares, tem-se também duas topologias predominantes, \gls{DET} ou \gls{PPT}.
+Nas topologias \gls{DET}, os painéis são conectados diretamente ao sistema de armazenamento e/ou aos reguladores das cargas.
+Já nas topologias \gls{PPT}, os painéis são conectados à conversores \gls{DCDC} operados de forma a realizar \gls{MPPT}.
+Adicionalmente, no estudo de \textcite{sara-review-eps}, diferenciam-se entre utilização de conversores discretos ou via circuitos integrados, e também apresenta-se a utilização de reguladores \gls{VLDO} para a interface com os painéis solares.
 
 Em relação à regulação do barramento principal, tem-se topologias com barramento principal regulado, onde há um conversor regulando o mesmo para uma tensão de referência, não-regulado, onde os terminais da bateria são conectados diretamente ao barramento, ou parcialmente regulado, em que o barramento é regulado apenas durante o período iluminado da órbita.
 
@@ -186,7 +202,7 @@ A seguir serão analisadas as arquiteturas de diferentes modelos de \gls{EPS}, t
 O \gls{EPS} desenvolvido para o satélite Aalto-2, descrito em \textcite{aalto-eps}, utiliza uma topologia de distribuição centralizada, conversão multi estágio, sistema de harvesting com \gls{PPT} e barramento principal não regulado.
 Além disso, possui um microcontrolador MSP430 para controle e monitoramento e redundâncias em hardware para as funcionalidades principais como conversores DC-DC, reguladores de carga de bateria e \gls{MPPT}.
 
-O sistema de harvesting deste \gls{EPS} possui dois canais com CIs dedicados para a realização de \gls{MPPT}. O conjunto de painéis solares de cada eixo, X e Y, é ligado ao barramento principal através de um \gls{BCR}, neste caso o LT3652.
+O sistema de harvesting deste \gls{EPS} possui dois canais, cada um com um \gls{CI} dedicado para a realização de \gls{MPPT}. O conjunto de painéis solares de cada eixo, X e Y, é ligado ao barramento principal através de um \gls{BCR}, neste caso o LT3652.
 
 Para armazenamento de energia o EPS do Aalto-2 utilizará duas células de baterias em paralelo (configuração 1s2p). O modelo das baterias ainda não havia sido determinado, porém a inclusão de circuitos de proteção contra over-charge e over-discharge, assim como a necessidade de um sistema de aquecimento para as baterias já estavam previstos.
 
@@ -196,7 +212,7 @@ Possui também um barramento dedicado para alimentar o microcontrolador.
 Para controle dos barramentos foram utilizados MOSFETs MAX890L, que além de atuarem como chaves, possuem limitação de corrente proporcionando proteção contra over-current.
 Além disso, corrente e tensão nos barramentos são monitoradas pelo microcontrolador.
 
-Para controle e monitoramento, foi utilizado o microcontrolador MSP430-F1611. Tensões, correntes e temperaturas são medidas através do CI LTC2991. Os seguintes dados de telemetria são monitorados e transmitidos ao computador de bordo pelo EPS:
+Para controle e monitoramento, foi utilizado o microcontrolador MSP430-F1611. Tensões, correntes e temperaturas são medidas através do \gls{CI} LTC2991. Os seguintes dados de telemetria são monitorados e transmitidos ao computador de bordo pelo EPS:
 \begin{alineas}
     \item Tensões, correntes e temperaturas dos painéis solares.
     \item Tensões, correntes e temperaturas de cada célula das baterias.
@@ -222,7 +238,7 @@ Os barramentos possuem também chaves de potência, TPS2551 ou TPS2557, com prot
 
 O controle deste \gls{EPS} é realizado por um microcontrolador ATMega1280 e utiliza de memórias FRAM para armazenamento do firmware, variáveis de controle e variáveis de estado.
 Comunicação com os outros módulos do satélite é feita via \gls{UART}.
-O monitoramento é realizado através de 44 sensores de tensão e corrente em diversos pontos do sistema e um conjunto de ADCs dedicados, além ADC interno do microcontrolador.
+O monitoramento é realizado através de 44 sensores de tensão e corrente em diversos pontos do sistema e um conjunto de \gls{ADC}s dedicados, além do \gls{ADC} interno do microcontrolador.
 
 Este \gls{EPS} é responsável por realizar os procedimentos de inicialização do satélite pós lançamento e também por controlar o rádio de transmissão do beacon.
 
@@ -262,7 +278,7 @@ Como mencionado na \autoref{sec:intro-spacelab}, o \gls{EPS2} é uma evolução 
 \end{figure}
 
 Este módulo implementa uma topologia de distribuição centralizada, com múltiplos estágios de conversão, sistema de harvesting com \gls{PPT} e barramento principal não regulado.
-Possui também um microcontrolador para operação, leitura de sensores e comunicação cos os demais módulos do satélite.
+Possui também um microcontrolador para operação, leitura de sensores e comunicação com os demais módulos do satélite.
 
 O sistema de harvesting consiste em três canais com conversores boost discretos e sensores de tensão e corrente, controlados individualmente pelo microcontrolador para realizar \gls{MPPT}, utilizando o algoritmo de \gls{PO}.
 
@@ -270,8 +286,9 @@ O sistema de distribuição consiste em seis barramentos com conversores dedicad
 
 O sistema de armazenamento consiste de um sistema de monitoramento (chamado \textit{Batteries Management Subsystem} na \autoref{fig:eps2-diagrama-blocos}) e de um módulo de baterias separado (chamado \textit{Batteries Daughterboard} no diagrama da \autoref{fig:eps2-diagrama-blocos}), que pode ser acoplado ao \gls{EPS2}.
 O módulo de baterias contem 4 células de baterias de íon de lítio em configuração 2s-2p, bem como sensores de temperatura e aquecedores que podem ser lidos e controlados pelo microcontrolador do \gls{EPS}.
-O sistema de monitoramento é realizado pelo CI DS2777G+, que realiza leituras de tensão e corrente das baterias, proteção contra over-charge e over-discharge, estimativas de vida útil e monitoramento do estado de carga das baterias.
-Os sensores de temperatura são lidos por um conversor AD dedicado ADS1248 e utilizados para controle dos aquecedores de bateria, os drivers para acionamento dos aquecedores, assim como o conversor AD, ficam no próprio \gls{EPS} e são controlados pelo microcontrolador.
+Há também uma versão deste módulo com duas células de bateria em configuração 2s-1p.
+O sistema de monitoramento é realizado pelo \gls{CI} DS2777G+, que realiza leituras de tensão e corrente das baterias, proteção contra over-charge e over-discharge, estimativas de vida útil e monitoramento do estado de carga das baterias.
+Os sensores de temperatura são lidos por um conversor \gls{AD} dedicado ADS1248 e utilizados para controle dos aquecedores de bateria, os drivers para acionamento dos aquecedores, assim como o conversor \gls{AD}, ficam no próprio \gls{EPS} e são controlados pelo microcontrolador.
 
 O microcontrolador utilizado é um MSP430F6659 de 16 bits e de baixo consumo.
 Suas principais funções são: leitura de sensores, comunicação com os demais módulos, monitoramento das baterias, controle dos aquecedores de bateria e execução do algoritmo para \gls{MPPT}.
@@ -465,7 +482,7 @@ As inspeções e testes descritos acima foram executados no modelo de engenharia
     \end{alineas}
 \end{alineas}
 
-Para todos os testes, o \gls{EPS} foi alimentado por uma fonte de bancada, através de uma flat sat.
+Para todos os testes, o \gls{EPS} foi alimentado por uma fonte de bancada, através de uma flatsat.
 
 As inspeções visam verificar a qualidade do processo de fabricação, conformidade com os arquivos de projeto e integridade mecânica e elétrica do módulo.
 
@@ -477,7 +494,7 @@ Os principais barramentos de comunicação, com o \gls{OBDH} via \gls{I2C} e com
 
 A leitura dos sensores foi verificada comparando-se as medidas reportadas nos logs do \gls{EPS} com medidas realizadas por instrumentos de medição externos.
 
-O funcionamento do monitor de baterias foi verificado através da leitura dos registradores internos do CI, comparando-se com os valores e configurações esperados.
+O funcionamento do monitor de baterias foi verificado através da leitura dos registradores internos do \gls{CI}, comparando-se com os valores e configurações esperados.
 
 Para o teste do controle dos aquecedores de bateria, seus limiares máximo e mínimo de temperatura foram alterados para valores acima da temperatura ambiente (32°C e 26°C, respectivamente), e as leituras dos sensores de temperatura foram monitoradas durante um período de tempo.
 

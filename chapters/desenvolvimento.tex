@@ -79,20 +79,20 @@ Em ECSS-E-ST-10-03 \cite{ecss-e-st-10-03}, tratam-se dos testes para os níveis 
 Num primeiro momento, devido às nomenclaturas utilizadas e aos exemplos da tabela menciona, parece intuitivo atribuir os subsistemas de um CubeSat, e portanto o \gls{EPS}, ao nível de \textit{space segment subsystem}, porém uma análise mais minuciosa é necessária.
 
 Primeiramente, visto que a plataforma de serviço é o principal foco de desenvolvimento do SpaceLab, é de grande interesse que sejam aplicados testes mais completos aos seus módulos, além de apenas testes funcionais básicos.
-Além disso, analisando as definições presentes nas próprias normas da \gls{ECSS}, pode-se fazer argumento para a aplicação dos testes voltados para \textit{space segment element} aos módulos de serviço de CubeSat, mais especificamente, neste trabalho, ao\gls{EPS}.
+Além disso, analisando as definições presentes nas próprias normas da \gls{ECSS}, pode-se fazer argumento para a aplicação dos testes voltados para \textit{space segment element} aos módulos de serviço de CubeSat, mais especificamente, neste trabalho, ao \gls{EPS}.
 
-Como visto na \autoref{sec:cubesats}, os módulos de serviço são responsáveis pelas funções fundamentais do nano satélite, e estão diretamente relacionados com o cumprimento de seus objetivos.
+Como visto na \autoref{sec:cubesats}, os módulos de serviço são responsáveis pelas funções fundamentais do nanossatélite, e estão diretamente relacionados com o cumprimento de seus objetivos.
 Observando a definição para o termo \textit{element}, nota-se que este está relacionado justamente com o cumprimento de um subconjunto dos objetivos do satélite.
 
 \begin{citacao}
     element: combination of integrated equipment, components and parts. An element fulfils a major, self-contained, subset of a segment's objectives. \cite[p. 9]{ecss-s-st-00-01}.
-\end{citacao}.
+\end{citacao}
 
-Além disso, nas próprias normas o termo \textit{service module} (módulo de serviço) é mencionado com \textit{element}. De fato, é mencionado tanto em \textcite{ecss-s-st-00-01} quanto em \textcite{ecss-e-st-10-03} que um elemento pode ser dividido em dois um mais elementos.
+Além disso, nas próprias normas o termo \textit{service module} (módulo de serviço) é mencionado com \textit{element}. De fato, é mencionado tanto em \textcite{ecss-s-st-00-01} quanto em \textcite{ecss-e-st-10-03} que um elemento pode ser dividido em dois ou mais elementos.
 
 \begin{citacao}
     A space segment element can be composed of several space segment elements, e.g. a spacecraft is composed of instruments, a payload module and a service module. \cite[p. 10]{ecss-s-st-00-01}
-\end{citacao}.
+\end{citacao}
 
 Outro ponto importante, esta divisão proposta nas normas está no contexto de um satélite de médio ou grande porte, com sistemas de complexidade muito maiores que um CubeSat, portanto, uma decomposição mais granulada dos sistemas é adequada neste aspecto.
 Mesmo neste cenário, em \textcite{ecss-e-hb-10-02}, é mencionado a possibilidade de não se utilizar o nível de subsistema como forma de redução de custos.
@@ -147,13 +147,14 @@ O relatório de teste (\textit{Test Report}) descreve a execução do teste, os 
 
 Em relação à aplicabilidade deste tipo de documentação, algumas considerações podem ser feitas.
 Primeiramente, ressalta-se que as definições destes documentos visam abranger testes altamente complexos para satélites de grande porte.
-Outro ponto é que, seguindo à risca estas definições, uma grande quantidade de comentos é gerada, especialmente documentos de especificação e procedimentos de teste, visto que, a princípio, seriam gerados ao menos um conjunto destes documentos para cada teste.
+Outro ponto é que, seguindo à risca estas definições, uma grande quantidade de documentos é gerada, especialmente documentos de especificação e procedimentos de teste, visto que, a princípio, seriam gerados ao menos um conjunto destes documentos para cada teste.
 
 Em uma missão de CubeSat, devido a simplicidade de projeto e também dos testes executados em relação à satélites de grande porte, bem como a proposta de baixo custo e rápido desenvolvimento, e especialmente considerando que neste trabalho o foco está em apenas um dos módulos do satélite, é possível simplificar e agrupar boa parte destes documentos.
 
 Com isto em mente, é proposto que estes documentos sejam unificados e adaptados ao estilo de documentação de cada projeto.
 No caso do SpaceLab, por exemplo, cada módulo possui um único documento descrevendo todas as características do mesmo, e incluindo também um planejamento de testes e relatórios de testes neste mesmo documento. Portanto, neste caso uma opção seria agrupar os quatro documentos em um único exemplar, e possivelmente anexa-lo ao documento principal do módulo.
-Em projetos com múltiplos documentos, poderia-se manter documentos separados, mas agrupar cada tipo de documento em um único exemplar, por exemplo, agrupar todas as especificações de teste em um único documento de especificação.
+% Em projetos com múltiplos documentos, poderia-se manter documentos separados, mas agrupar cada tipo de documento em um único exemplar, por exemplo, agrupar todas as especificações de teste em um único documento de especificação.
+Outra opção, para projetos que utilizam múltiplos documentos, seria adotar um exemplar para cada tipo de documento, ou seja, um documento contendo o plano de testes, um documento contendo todas as especificações de teste, outro contendo todos os procedimentos e, por fim, um quarto contendo todos os relatórios.
 
 
 % ----------------------------------------------------------
@@ -235,7 +236,7 @@ Em relação às intensidades e durações, serão referenciadas estas tabelas d
 As linhas de base de testes apresentadas em \textcite{ecss-e-st-10-03}, assim como o restante da norma, foram elaboradas de forma bastante abrangente e direcionadas à satélites de grande porte.
 Sendo assim, considerando a simplicidade de projeto de um CubeSat e o contexto de uma missão universitária, uma versão adaptada destas matrizes de base será adotada.
 
-De fato, será proposta uma única matriz para os três diferentes objetivos, porém esta será elaborada de forma a abranger diferentes topologias e arquiteturas.
+No documento de diretrizes, será proposta uma única matriz para os três diferentes objetivos, porém esta será elaborada de forma a abranger diferentes topologias e arquiteturas.
 Ainda, visto que o documento de diretrizes é voltado diretamente para módulos \gls{EPS}, é possível propor testes mais específicos, especialmente no caso de testes funcionais e de missão, proporcionando um maior direcionamento em relação as matrizes base.
 
 % Considerações sobre testes em missões anteriores
@@ -275,7 +276,7 @@ Conforme apresentados na norma ECSS-E-ST-10-03 \cite{ecss-e-st-10-03}, os testes
         \item pode-se ainda dividir-se em testes funcionais mecânicos e elétricos;
     \end{alineas}
     \item testes de performance tem a finalidade de verificar que o produto apresenta a performance adequada na execução de suas funções de acordo com as suas especificações e requisitos;
-    \item testes de missão tem a finalidade de simular casos de missão esperados, em cenários nominais e críticos, durante a operação da missão, dentro do que se pode similar em terra:
+    \item testes de missão tem a finalidade de simular casos de missão esperados, em cenários nominais e críticos, durante a operação da missão, dentro do que se pode simular em terra:
     \begin{alineas}
         \item casos de missão referem-se a situações e eventos esperados durante a missão, bem como a operação nominal de acordo com o planejamento da missão.
     \end{alineas}
@@ -336,7 +337,7 @@ Todo conjunto de características servirá de base para os testes funcionais pro
 
 Como base para os testes de performance e de missão, convém analisar-se as campanhas de testes de módulos \gls{EPS} apresentadas na \autoref{sec:testes-epss}.
 Na \autoref{tab:testes-eps}, tem-se uma visão geral dos principais tipos de testes executados nos módulos em cada campanha de testes apresentada.
-Uma descrição mais detalhada sobre os testes em cada módulo encontra-se na seção menciona acima.
+Uma descrição mais detalhada sobre os testes em cada módulo encontra-se na seção mencionada acima.
 
 \begin{table}[ht!]
     \ABNTEXfontereduzida
@@ -355,6 +356,7 @@ Uma descrição mais detalhada sobre os testes em cada módulo encontra-se na se
         EPS 2.0   & X & X & - & - & - & - \\
         \bottomrule
     \end{tabular}
+    \fonte{Elaborada pelo autor.}
     \label{tab:testes-eps}
 \end{table}
 
@@ -389,7 +391,7 @@ Com base nas análises das diferentes topologias e arquiteturas, bem como das ca
     \caption{Matriz de testes base}
     \begin{tabular}{cl}
         \toprule
-        \textbf{Test Block} & \textbf{Test Activity} \\
+        \textbf{Blocos de Teste} & \textbf{Atividades de Teste} \\
         \midrule
         \midrule
         \multirow{4}{*}{Inspeções}      & Inspeção de Fabricação                \\

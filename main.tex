@@ -10,6 +10,7 @@
 % ------------------------------------------------------------------------
 % ------------------------------------------------------------------------
 
+\pdfobjcompresslevel=0 %uncomment for Texlive
 \documentclass[
 	% -- opções da classe memoir --
 	12pt,				% tamanho da fonte
@@ -25,8 +26,33 @@
 	english,			% idioma adicional para hifenização
 	%french,				% idioma adicional para hifenização
 	%spanish,			% idioma adicional para hifenização
-	brazil				% o último idioma é o principal do documento
+	brazil,				% o último idioma é o principal do documento
+	pdfa
 	]{abntex2}
+
+\usepackage{hyperxmp}[2020/03/01]
+\usepackage{embedfile}[2020/04/01]
+\hypersetup{%
+    pdflang=la,
+    pdfapart=3, %set to 1 for PDF/A-1
+    pdfaconformance=B
+}
+
+\embedfile[afrelationship={/Source},ucfilespec={main.tex},mimetype={application/x-tex}]{main.tex}
+
+%Create an OutputIntent in order to correctly specify colours
+\immediate\pdfobj stream attr{/N 3} file{sRGB.icc}
+\pdfcatalog{%
+  /OutputIntents [
+    <<
+      /Type /OutputIntent
+      /S /GTS_PDFA1
+      /DestOutputProfile \the\pdflastobj\space 0 R
+      /OutputConditionIdentifier (sRGB)
+      /Info (sRGB)
+    >>
+  ]
+}
 
 \usepackage{setup/ufscthesisA4-alf}
 \usepackage{multirow}
